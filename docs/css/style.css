@@ -19,11 +19,15 @@
 	font-style: normal;
 }
 
-p {
+::-webkit-scrollbar {display: none;}
+::-moz-selection { color: white;  background: #111111; }
+::selection      { color: white;  background: #111111; }
+
+p,a {
     font-family: texto;
 }
 
-h1 {
+h1,h2,h3,h4,h5,h6 {
     font-family: titulo;
     font-weight: normal;
     font-size: 28px;
@@ -45,6 +49,16 @@ form > p {
 
 ul li,
 ol li {list-style: none;}
+input:invalid {
+    border: 1px solid red;
+}
+
+.cuerpo{
+    width: 70%;
+    padding: 5%;
+    float: left;
+    margin: 0 10%;
+}
 
 input[type="checkbox"],
 input[type="radio"] {
@@ -107,14 +121,15 @@ body{
     -webkit-transition: all 0.2s linear;
 	-moz-transition: all 0.2s linear;
 	transition: all 0.2s linear;
+    height: 100vh;
 }
 
 .nueva-foto-btn {
-    float: right; width: 10%; vertical-align: middle; height: 100vh;
+    float: right; width: 10%; vertical-align: middle; height: 100vh; display: contents;
 }
 
 .circulo-mas{
-    background-color: #111111; border-radius: 50%; width: 45px; height: 45px; position: absolute; bottom: 50px; right: 70px;
+    background-color: #111111; border-radius: 50%; width: 45px; height: 45px; position: fixed; bottom: 50px; right: 70px;
 }
 
 nav{
@@ -122,23 +137,51 @@ nav{
     height: 100vh; 
     display: grid; 
     margin: 0px; 
+    position: fixed;
     float: left; 
     text-align: center; 
     background-color: #ffffff;
 }
 
-.form-reg{
-    display: block; width: 50%; margin: 0 25%;
-}
+
 
 input {
     border-radius: 20px;
     border: 1px solid #111111;
     background-color: #ffffff;
-    padding: 10px 10%;
-    width: 80%;
+    padding: 10px 3%;
+    width: 94%;
     font-family: texto;
     font-size: 14px;
+}
+
+body.nuevo {
+    background-color: #fff;
+}
+
+.titulo-nuevo{
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    font-family: texto-b;
+    font-size: 64px;
+    color: transparent !important;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    position: fixed;
+    bottom: 30%;
+    width: max-content;
+    display: block;
+    left: -10%;
+    float: left;
+}
+
+img.close{
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
 }
 
 input[type=submit] {
@@ -164,3 +207,49 @@ input[type=submit]:hover {
 }
 
 input:focus {outline: none;}
+
+
+
+    div.photo-block {
+    height: fit-content;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+    }
+    h2.photo-title {
+    font-size: 140%;
+    font-family: titulo;
+    text-decoration: underline;
+    }
+    div.photo-score {
+    font-family: 130%;
+    font-family: monospace;
+    }
+    img.photo-image {
+    width: 100%;
+    }
+    .gallery-container {
+        display: grid;
+        grid-template-columns: 32% 32% 32%;
+        grid-column-gap: 2%;
+    }
+
+    .profile-ph-post{
+        width: 25px;
+        float: left;
+        margin: 20px;
+        border-radius: 50px;
+    }
+
+    .user{
+    font-family: texto-b;
+    width: fit-content;
+    float: left;
+    margin: 23px 0;
+    }
+        
+
+
+
+
