@@ -1,2 +1,2 @@
-# Silence blank project
-This is an empty Silence project.
+# Proyecto de IISSI 2 - CREADO EN SILENCE
+Galeria de imágenes - GALE - Enrique Muñoz Pérez.
