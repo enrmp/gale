@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'texto';
-    src: url('/fonts/texto.ttf') format('truetype');
+    src: url('../fonts/texto.ttf') format('truetype');
     font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
     font-family: 'texto-b';
-    src: url('/fonts/texto-bold.ttf') format('truetype');
+    src: url('../fonts/texto-bold.ttf') format('truetype');
     font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
     font-family: 'titulo';
-    src: url('/fonts/titulo.ttf') format('truetype');
+    src: url('../fonts/titulo.ttf') format('truetype');
     font-weight: normal;
 	font-style: normal;
 }
@@ -54,10 +54,11 @@ input:invalid {
 }
 
 .cuerpo{
-    width: 70%;
+    width: 80%;
     padding: 5%;
     float: left;
     margin: 0 10%;
+    animation: fade 1.5s ease 1;
 }
 
 input[type="checkbox"],
@@ -116,12 +117,10 @@ input[type="radio"]:checked:after {
 }
 
 body{
-    background-color: #f7f7f7;
+    background-color: #f7f7f7 !important;
     margin: 0%;
-    -webkit-transition: all 0.2s linear;
-	-moz-transition: all 0.2s linear;
-	transition: all 0.2s linear;
     height: 100vh;
+    
 }
 
 .nueva-foto-btn {
@@ -130,9 +129,77 @@ body{
 
 .circulo-mas{
     background-color: #111111; border-radius: 50%; width: 45px; height: 45px; position: fixed; bottom: 50px; right: 70px;
+    z-index: 999;
 }
 
-nav{
+.tabs {
+    position: relative;
+    width: 100%;
+  }
+  
+  .tabs__controller {
+    position: absolute;
+    opacity: 0;
+    top: -0.8rem;
+    left: -0.8rem;
+  }
+  
+  .tabs__row {
+    display: flex;
+    padding: 0;
+    background-color: transparent;
+    list-style: none;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 30rem;
+    position: relative;
+  }
+  
+  .tabs__row:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: .5px;
+    background-color: #111111;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: left 0.3s ease-in-out;
+  }
+  
+
+  
+  .tabs__controller#tab-general:checked ~ .tabs__button.general {
+      font-family: "texto-b !important";
+  }
+
+  input:checked ~ .tabs__button {
+    font-family: "texto-b !important";
+}
+
+  .tabs__controller#tab-general:checked ~ .tabs__row:after {
+    left: 50%;
+  }
+  
+  .tabs__item {
+    padding: 5% 5%;
+    width: 40%;
+    
+  }
+  
+  .tabs__button {
+    font-family: "texto";
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+
+
+nav.control{
     width: 10%; 
     height: 100vh; 
     display: grid; 
@@ -153,6 +220,7 @@ input {
     width: 94%;
     font-family: texto;
     font-size: 14px;
+
 }
 
 body.nuevo {
@@ -177,7 +245,11 @@ body.nuevo {
     float: left;
 }
 
-img.close{
+div {
+    transition: opacity 0.4s;
+}
+
+img.cerrar{
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
@@ -208,32 +280,114 @@ input[type=submit]:hover {
 
 input:focus {outline: none;}
 
+@media only screen and (max-width: 767px){
+/*    .gallery-container {
+        display: grid;
+        grid-template-columns: 100% !important;
+        grid-row-gap: 3% !important;
 
+    }*/
+
+    .circulo-mas{
+        bottom: 20px;
+        height: 55px;
+        width: 55px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .cuerpo{
+        width: auto;
+        padding: 5% 0;
+        margin: 0 5%;
+    }
+
+    .menu {
+        display: grid;
+        width: 100%;
+        padding: 5% 5%;
+        grid-template-columns: 15% 35% 35% 15%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        background: #fff;
+    }
+
+    body > nav.control > section > div:nth-child(2){
+      padding-right: 25%;
+  }
+
+  body > nav.control > section > div:nth-child(3){
+      padding-left: 25%;
+  }
+
+    nav.control{
+        width: 100%; 
+        height: fit-content; 
+        display: grid; 
+        margin: 0px; 
+        position: relative;
+        float: left; 
+        text-align: center; 
+        background-color: transparent;
+    }
+}
 
     div.photo-block {
     height: fit-content;
     text-align: center;
     border-radius: 20px;
+    margin: 20px 0;
+    border:0;
     background-color: #fff;
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.05);
+    transition-delay: 0.5s;
+    animation: move-up 1.5s ease 1;
     }
-    h2.photo-title {
-    font-size: 140%;
-    font-family: titulo;
-    text-decoration: underline;
+
+    .photo-metadata-block{
+        margin:20px;
     }
-    div.photo-score {
-    font-family: 130%;
-    font-family: monospace;
+
+    p.photo-title {
+        font-size: 14px;
+        font-family: 'texto-b';
+        width: fit-content;
+        margin: 0;
+        float: left;
     }
+
+    p.photo-title::after {
+        content: "·";
+        font-size: 14px;
+        font-family: 'texto-b';
+        width: fit-content;
+        margin: 0 5px;
+    }
+
+    p.photo-description {
+        font-size: 14px;
+        font-family: 'texto';
+        width: fit-content;
+        margin: 0;
+        float: left;
+    }
+
+    h3.photo-score {
+        font-size: 90%;
+        font-family: 'texto';
+    }
+
     img.photo-image {
     width: 100%;
     }
-    .gallery-container {
+/*    .gallery-container {
         display: grid;
         grid-template-columns: 32% 32% 32%;
         grid-column-gap: 2%;
-    }
+
+    }*/
 
     .profile-ph-post{
         width: 25px;
@@ -248,7 +402,46 @@ input:focus {outline: none;}
     float: left;
     margin: 23px 0;
     }
+
+    .user::before{
+        content: "@";
+        font-family: texto-b;
+        width: fit-content;
+        float: left;
+        }
         
+    @keyframes move-up {
+        0% { 
+            
+            transform: translate(0,350px);
+          -webkit-transform: translate(0,350px);
+          -o-transform: translate(0,350px); 
+          -moz-transform: translate(0,350px);
+        }
+        100% { 
+            
+                transform: translate(0,0px);
+          -webkit-transform: translate(0,0px);
+          -o-transform: translate(0,0px); 
+          -moz-transform: translate(0,0px);
+        }
+      }
+
+    @keyframes fade {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    body.nuevo::after {
+        content: "";
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: -100vw;
+        left: 0;
+        transition: all .3s;
+    }
 
 
 
