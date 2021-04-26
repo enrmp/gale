@@ -1,5 +1,6 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>Mi perfil &#8212; GALE</title>
     <meta charset="UTF-8" />
@@ -11,34 +12,291 @@
     <script src="js/libs/jquery-3.4.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
+
 <body>
-    <nav class="control">
-    <div class="logo">GALE</div>
-    <section class="menu">
-        <div class="iconos-menu"><a href="index.html"><img src="images/inicio.png" title="Inicio" alt="Inicio" width="25px"></a></div>
-        <div class="iconos-menu"><a href="trending.html"><img src="images/estrella-black.png" title="Trending" alt="Trending" width="25px"></a></div>
-        <div class="iconos-menu"><a href="explora.html"><img src="images/buscar.png" title="Explorar" alt="Explora" width="25px"></a></div>
-        <div class="menu-activo"><img src="images/perfil.png" title="Mi Perfil" alt="Mi perfil" width="25px"></div>
+
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+        <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
+        <ul class="nav nav-pills nav-flush flex-column mt-auto text-center border-0 py-4">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right"
+                    title="Inicio">
+                    <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111; opacity: .4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="trending.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right"
+                    title="Trending">
+                    <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="explora.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right"
+                    title="Explora">
+                    <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Perfil">
+                    <i class="bi bi-person text-dark" style="font-size: 22px; color: #111;"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="fixed-bottom w-100 bg-white d-xl-none d-block nav-pills nav-flush m-0 text-center border-0 py-3 px-0">
+        <li class="nav-item">
+            <a href="index.html" class="nav-link py-1 w-25 float-left">
+                <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;  opacity: .4;"
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio"></i>
+            </a>
+        </li>
+        <li>
+            <a href="trending.html" class="nav-link py-1 pl-0 pr-5 w-25 float-left">
+                <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Trending"></i>
+            </a>
+        </li>
+        <li>
+            <a href="explora.html" class="nav-link py-1 pr-0 pl-5 w-25 float-left">
+                <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;"
+                    data-bs-toggle="tooltip" data-bs-placement="right" title="Explora"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-1  w-25 float-left">
+                <i class="bi bi-person text-dark" style="font-size: 22px; color: #111;" data-bs-toggle="tooltip"
+                    data-bs-placement="right" title="Perfil"></i>
+            </a>
+        </li>
+    </ul>
+
+ 
+        <!-- Nav pills -->
+
+        <div class="container sticky-top bg-light">
+            <div class="d-xl-none d-block mt-n2 mb-n5">
+                <h1 class="pt-4 m-3 text-center" style="color: #111;">GALE</h1>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-3 col-4">
+                    <img src="images/p16.jpg" alt="foto de perfil" class="img-perfil rounded-circle">
+                </div>
+
+                <div class="col-md-5 col-8 mt-5">
+                    <h2 class="mb-4 nombre-perfil">Enrique Muñoz Pérez</h2>
+                    <p><i class="bi bi-envelope"></i> enrmunper@alum.us.es</p>
+                    <p><i class="bi bi-hand-index-thumb"></i> @enrmunper</p>
+                    <p><i class="bi bi-star"></i> 4,6</p>
+                </div>
+
+                <div class="col-md-4 mt-5">
+                    <button type="button" class="btn rounded-pill w-100 bg-line text-uppercase"><strong>Editar mi
+                            perfil</strong></button>
+                </div>
+            </div>
+
+            <div class="row mx-auto mt-5 text-center estadisticas">
+                <div class="col-4">
+                    <div class="num-pr">
+                        <p><strong>4</strong></p>
+                    </div>
+                    <div class="num-des-pr text-uppercase">
+                        <p><strong>imágenes</strong></p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="num-pr">
+                        <p><strong>1 mil</strong></p>
+                    </div>
+                    <div class="num-des-pr text-uppercase">
+                        <p><strong>seguidores</strong></p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="num-pr">
+                        <p><strong>200</strong></p>
+                    </div>
+                    <div class="num-des-pr text-uppercase">
+                        <p><strong>seguidos</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="nav nav-pills mx-auto pt-5" role="tablist" id="perfil" style="width: fit-content;">
+                <li class="nav-item">
+                    <a class="nav-link active px-3 py-3 text-uppercase" data-toggle="pill" href="#publicas">Públicas
+                        (4)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 py-3 text-uppercase" data-toggle="pill" href="#privadas">Privadas (0)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 py-3 text-uppercase" data-toggle="pill" href="#valorado">Valorado (1)</a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div id="publicas" class="container tab-pane active"><br>
+                    <div class="container mb-4">
+                        <div class="row mb-5">
+                            <div class="col-md col-5 p-2  my-3 px-3 img-5"
+                                style="background-image: url(images/33.jfif);">
+                                                                    <div class="row position-absolute top-0 w-100">
+                                                                        <div class="col-12 text-right mt-3">
+                                                                            <i class="bi bi-three-dots color-black px-3 py-2 bg-light rounded-pill"></i>
+                                                                        </div>
+                                    </div>
+                                    <div class="row position-absolute bottom-0 w-100">
+
+                                    <div class="col-12">
+                                        <p class="m-0"><strong>@user</strong></p>
+                                    </div>
+                                    <div class="col-6 pr-0">
+                                        <p><strong><i class="bi bi-star-fill"></i> 5</strong></p>
+                                    </div>
+                                    <div class="col-6 text-right pl-0 pr-3 ">
+                                        <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md col-5 p-2  my-3 px-3 img-5"
+                                style="background-image: url(images/31.jfif);">
+                                                                    <div class="row position-absolute top-0 w-100">
+                                        <div class="col-12 text-right mt-3">
+                                            <i class="bi bi-three-dots color-black px-3 py-2 bg-light rounded-pill"></i>
+                                        </div>
+                                    </div>
+                                    <div class="row position-absolute bottom-0 w-100">
+
+                                    <div class="col-12">
+                                        <p class="m-0"><strong>@user</strong></p>
+                                    </div>
+                                    <div class="col-6 pr-0">
+                                        <p><strong><i class="bi bi-star-fill"></i> 4,8</strong></p>
+                                    </div>
+                                    <div class="col-6 text-right pl-0 pr-3 ">
+                                        <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md col-5 p-2 my-3 px-3 img-5"
+                                style="background-image: url(images/17.jfif);">
+                                <div class="row position-absolute top-0 w-100">
+                                    <div class="col-12 text-right mt-3" data-toggle="modal" data-target="#edit">
+                                        <i class="bi bi-three-dots color-black px-3 py-2 bg-light rounded-pill"></i>
+                                    </div>
+                                </div>
+                                <div class="row position-absolute bottom-0 w-100">
+                                    <div class="col-12">
+                                        <p class="m-0"><strong>@user</strong></p>
+                                    </div>
+                                    <div class="col-6 pr-0">
+                                        <p><strong><i class="bi bi-star-fill"></i> 4,2</strong></p>
+                                    </div>
+                                    <div class="col-6 text-right pl-0 pr-3">
+                                        <p><strong><i class="bi bi-chat-fill"></i> 0</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="col-md col-5 p-2 my-3 px-3 img-5"
+                                style="background-image: url(images/07.jpg);">
+                                <div class="row position-absolute top-0 w-100">
+                                    <div class="col-12 text-right mt-3">
+                                        <i class="bi bi-three-dots color-black px-3 py-2 bg-light rounded-pill"></i>
+                                    </div>
+                                </div>
+                                <div class="row position-absolute bottom-0 w-100">
+                                    <div class="col-12">
+                                        <p class="m-0"><strong>@user</strong></p>
+                                    </div>
+                                    <div class="col-6 pr-0">
+                                        <p><strong><i class="bi bi-star-fill"></i> 4,2</strong></p>
+                                    </div>
+                                    <div class="col-6 text-right pl-0 pr-3">
+                                        <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+        
+        
+                        </div>
+
+                    </div>
+                </div>
+                <div id="privadas" class="container tab-pane fade"><br>
+                    <div class="container">
+
+                    </div>
+                </div>
+
+                <div id="valorado" class="container tab-pane fade"><br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-12 border-radius mx-2 bg-white">
+                                <div class="col-4 float-left">
+                                    <a href="detalle.html">
+                                        <img src="images/29.jfif"
+                                    alt="" class="py-4 w-100">
+                                    </a>
+                                </div>
+                                <div class="col-8 float-left pl-md-0 pl-sm-3 mt-4">
+                                    
+                                    <p><strong>@user</strong></p>
+                                    <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> 4</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content p-5 border-0">
+                    <div class="position-absolute boton-cerrar-m border-0 text-right">
+                        <button type="button" class="btn" data-dismiss="modal"><i class="bi bi-x" style="font-size: 30px;"></i></button>
+                      </div>
+                    <div class="modal-body text-center">
+                        <a href="editar.html"><button type="button" class="btn rounded-pill btn-dark"><strong>Editar</strong></button></a>
+                        <button type="button" class="btn rounded-pill bg-line" data-dismiss="modal"><strong>Eliminar</strong></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+    </div>
+
+    <section class="github d-none d-lg-block">
+        <a href="nuevo.html">
+            <i class="bi bi-github"></i>
+        </a>
     </section>
-</nav>
-<section class="cuerpo">
-<!--<img src="/images/iniciar.png" title="Iniciar sesion" alt="Mi perfil" width="50px">-->
-    <section class="form-reg">
-    <h1>Regístrate</h1>
-    <form>
-        <p>Nombre:<br> <input required type="text" name= "firstName"></p>
-        <p>Apellidos:<br> <input required type="text" name="lastName"></p>
-        <p>Email:<br> <input required type="email" name="email"></p>
-        <p>Contraseña:<br> <input required type="password" name="password"></p>
-        <p><input type="submit"></p>
-    </form>
+
+
+    <section class="nueva-foto-btn">
+        <a href="nuevo.html">
+            <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Nueva foto">
+                <img src="images/mas.png" alt="nueva foto" width="60%" style="margin: 20%;">
+            </div>
+        </a>
     </section>
-</section>
-<section class="nueva-foto-btn">
-    <a href="nuevo.html"><div class="circulo-mas">
-        <img src="images/mas.png" title="añadir foto" alt="nueva foto" width="60%" style="margin: 20%;">
-    </a>
-</section>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
+
 </html>

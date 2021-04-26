@@ -12,17 +12,60 @@
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
 </head>
-<body class="nuevo">
-    <nav class="control">
-        <div class="logo">GALE</div>
+<body class="bg-white h-100">
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+        <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
         <div class="titulo-nuevo">NUEVA IMAGEN</div>
-    </nav>
+    </div>
+
+    <div class="container mt-5 align-middle h-100">
+        <div class="d-xl-none d-block mt-n2 mb-n3">
+            <h1 class="m-2 text-center" style="color: #111;">GALE</h1>
+        </div>
+        <div class="row align-middle">
+            <div class="col-12 col-lg-6">
+                <label for="imgurl" class="form-label pt-4"><strong>URL</strong></label>
+                <input type="url" class="form-control rounded-pill border-dark px-4" id="imgurl">
+
+                <label for="description" class="form-label pt-4"><strong>Descripción</strong></label>
+                <input type="text" class="form-control rounded-pill border-dark px-4" id="description">
+
+            </div>
+            <div class="col-12 col-lg-6">
+                <label for="title" class="form-label pt-4"><strong>Título</strong></label>
+                <input type="text" class="form-control rounded-pill border-dark px-4" id="title">
+
+                <label for="imgcat" class="form-label pt-4"><strong>Categorías</strong></label>
+                <input type="text" class="form-control rounded-pill border-dark px-4" id="imgcat">
+
+                <p class="pt-4"><strong>Visibilidad</strong></p>
+                <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label d-block m-0 pl-2 mr-5 float-left" for="flexRadioDefault1">
+                  Pública
+                </label>
+                <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label d-block m-0 pl-2 float-left" for="flexRadioDefault2">
+                  Privada
+                </label>
+            </div>
+            <div class="col-12 text-center mt-5">
+            <button type="button" class="btn btn-dark rounded-pill w-50 mt-5 p-2 bg-black text-uppercase"><strong>Compartir imagen</strong></button>
+            </div>
+        </div>
+    </div>
+
     <section class="nueva-foto-btn">
         <a href="javascript: history.go(-1)">
-        <div class="circulo-mas">
-            <img src="images/mas.png" class="cerrar" title="añadir foto" alt="nueva foto" width="60%" style="margin: 20%;">
+        <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Cerrar">
+            <img src="images/mas.png" class="cerrar" alt="cerrar" width="60%" style="margin: 20%;">
         </div>
         </a>
     </section>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+    </script>
 </body>
 </html>
