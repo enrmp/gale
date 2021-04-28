@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detalles de imagen &#8212; GALE</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/jquery.adaptive-backgrounds.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+</head>
+
+<body class="detalle">
+
+    <div class="d-block h-100 mt-3 w-fit">
+            <h5 class="text-center m-5 bg-white py-2 px-4 rounded-pill" style="color: #111;">
+                <a href="javascript: history.go(-1)">
+                    <div data-bs-toggle="tooltip" data-placement="bottom" title="Volver">
+                        <i class="bi bi-arrow-left"></i>
+                    </div>
+                </a>
+            </h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 mb-5 p-3 bg-white">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p11.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 2 mins</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                                <img class="photo-image"
+                                    src="images/29.jfif" data-adaptive-background="1">
+                            
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="photo-metadata-block text-left">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star"></i> 4</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 2</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                <p class="photo-title">Ejemplo de título</p>
+                                <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                            </div>
+                                <div class="row mx-1">
+                                    <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>naturaleza</strong></p></div>
+                                    <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>viaje</strong></p></div>
+                                </div>
+                                <h5 class="my-4">Comentarios</h5>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="images/p12.jfif"
+                                        alt="" class="profile-ph-detail">
+                                    </div>
+                                    <div class="col-10 pl-md-0 pl-sm-3 mt-4">
+                                        
+                                        <p class="photo-title">@user</p>
+                                        <p class="photo-description">Esto es un comentario!</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                <div class="col-2 d-block">
+                                    <img src="images/p14.jfif"
+                                    alt="" class="profile-ph-detail">
+                                </div>
+                                <div class="col-10 pl-md-0 pl-sm-3 mt-4">
+                                    
+                                    <p class="photo-title">@user</p>
+                                    <p class="photo-description">Esto es otro comentario!</p>
+                                </div>
+                                </div>
+                                <hr>
+                                <div class="row mt-4">
+                                    <div class="col-2 d-block">
+                                        <img src="images/p10.jfif"
+                                        alt="" class="profile-ph-detail">
+                                    </div>
+                                    <div class="col-10 pl-md-0 pl-sm-3 mt-3">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control rounded-pill border-0 bg-light px-4 mr-2 comentario" placeholder="Escribe un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                            <div class="input-group-append">
+                                              <button class="btn rounded-pill btn-dark comentario" type="button">Enviar</button>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    </div>
+
+
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="back">
+
+    </section>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+jQuery(document).ready(function(){
+jQuery.adaptiveBackground.run()
+});
+</script>
+</body>
+
+</html>

@@ -7,25 +7,248 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
     <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/owl.carousel.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <nav class="control">
-    <div class="logo">GALE</div>
-    <section class="menu">
-        <div class="iconos-menu"><a href="index.html"><img src="images/inicio.png" title="Inicio" alt="Inicio" width="25px"></a></div>
-        <div class="iconos-menu"><a href="trending.html"><img src="images/estrella-black.png" title="Trending" alt="Trending" width="25px"></a></div>
-        <div class="menu-activo"><img src="images/buscar.png" title="Explorar" alt="Explora" width="25px"></div>
-        <div class="iconos-menu"><a href="perfil.html"><img src="images/perfil.png" title="Mi Perfil" alt="Mi perfil" width="25px"></a></div>
-    </section>
-    </nav>
-    <section class="nueva-foto-btn">
-        <div class="circulo-mas">
-            <img src="images/mas.png" title="añadir foto" alt="nueva foto" width="60%" style="margin: 20%;">
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+        <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
+    <ul class="nav nav-pills nav-flush flex-column mt-auto text-center border-0 py-4">
+        <li class="nav-item">
+            <a href="index.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Inicio">
+                <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111; opacity: .4;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="trending.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Trending">
+                <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Explora">
+                <i class="bi bi-search text-dark" style="font-size: 18px; color: #111;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="iniciar-sesion.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Perfil">
+                <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<ul class="fixed-bottom w-100 bg-white d-xl-none d-block nav-pills nav-flush m-0 text-center border-0 py-3 px-0">
+    <li class="nav-item">
+        <a href="index.html" class="nav-link py-1 w-25 float-left">
+            <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio"></i>
+        </a>
+    </li>
+    <li>
+        <a href="trending.html" class="nav-link py-1 pl-0 pr-5 w-25 float-left">
+            <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Trending"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="nav-link py-1 pr-0 pl-5 w-25 float-left">
+            <i class="bi bi-search text-dark" style="font-size: 18px; color: #111;" data-bs-toggle="tooltip" data-bs-placement="right" title="Explora"></i>
+        </a>
+    </li>
+    <li>
+        <a href="iniciar-sesion.html" class="nav-link py-1  w-25 float-left">
+            <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Perfil"></i>
+        </a>
+    </li>
+</ul>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <h1 class="text-center mb-5">Explora</h1>
+            <div class="form-outline">
+                <i class="bi bi-search text-dark buscador-icon"></i>
+                <input type="search" id="buscador" class="form-control rounded-pill border-dark pl-5" placeholder="Escribe lo que quieres buscar"
+                aria-label="Search" />
+              </div>
+
+              <div class="row my-4" data-bs-toggle="tooltip" data-placement="bottom" title="Desliza">
+                <div class="owl-carousel">
+                <div class="p-2 px-3 text-center bg-line mx-auto rounded-pill" data-toggle="modal" data-target="#exampleModal"><p class="m-0 fs-3 cat"><strong><i class="bi bi-plus"></i> añadir categoria</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>AMOR</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>FOTOGRAFÍA</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>COCINA</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>ANIMALES</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>ESTILO DE VIDA</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>grecia</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>analógico</strong></p></div>
+                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>vintage</strong></p></div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content p-5 border-0">
+                    <div class="modal-header border-0">
+                      <h4 class="modal-title" id="exampleModalLabel">Añade una nueva categoría</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control rounded-pill border-dark px-4" id="categoria" placeholder="Escribe aquí tu categoría">
+                    </div>
+                    <div class="modal-footer border-0">
+                      <button type="button" class="btn rounded-pill bg-line" data-dismiss="modal"><strong>Cerrar</strong></button>
+                      <button type="button" class="btn rounded-pill btn-dark"><strong>Añadir categoría</strong></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            <h3 class="mb-3">Minimalista</h3>
+            <div class="row mb-5 mx-0 owl-carousel">
+
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/17.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/18.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/21.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/20.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/07.jpg);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <a href="minimalismo.html">
+                    <div class="col p-2 px-3 ver-mas text-center">
+                        <p class="text-dark">Ver más</p>
+                    </div>
+                </a>
+           
+            </div>
+
+
+            <h3 class="mb-3">Comida</h3>
+            <div class="row mb-5 mx-0 owl-carousel">
+
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/22.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/23.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/24.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/25.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/26.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 ver-mas text-center">
+                    <p class="text-dark">Ver más</p>
+                </div>
+           
+            </div>
+
+
+            <h3 class="mb-3">Naturaleza</h3>
+            <div class="row mb-5 mx-0 owl-carousel">
+
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/27.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/28.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/29.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/30.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 img-3" style="background-image: url(images/31.jfif);">
+                    <div class="row position-absolute bottom-0 info-img2">
+                        <div class="col-12"><p class="m-0 mb-2"><strong>@user</strong></p></div>
+                    </div>
+                </div>
+                <div class="col p-2 px-3 ver-mas text-center">
+                    <p class="text-dark">Ver más</p>
+                </div>
+           
+            </div>
+
+
         </div>
-    </section>
+    </div>
+</div>
+
+<section class="github d-none d-lg-block">
+    <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
+        <i class="bi bi-github"></i>
+    </a>
+</section>
+
+<section class="nueva-foto-btn">
+    <a href="nuevo.html">
+        <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Nueva foto">
+            <img src="images/mas.png" alt="nueva foto" width="60%" style="margin: 20%;">
+        </div>
+    </a>
+</section>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+
+<script>
+$(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
+$('.owl-carousel').owlCarousel({
+    margin:10,
+    loop:false,
+    autoWidth:true
+})
+</script>
 </body>
 </html>

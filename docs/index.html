@@ -1,5 +1,6 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
+
 <head>
     <title>GALE &#8212; Galeria de fotos</title>
     <meta charset="UTF-8" />
@@ -11,108 +12,400 @@
     <script src="js/libs/jquery-3.4.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
-<body>
-    <nav class="control">
-        <div class="logo">GALE</div>
-    <section class="menu">
-        <div class="menu-activo"><img src="images/inicio.png" title="Inicio" alt="Inicio" width="25px"></div>
-        <div class="iconos-menu"><a href="trending.html"><img src="images/estrella-black.png" title="Trending" alt="Trending" width="25px"></a></div>
-        <div class="iconos-menu"><a href="explora.html"><img src="images/buscar.png" title="Explorar" alt="Explora" width="25px"></a></div>
-        <div class="iconos-menu"><a href="perfil.html"><img src="images/perfil.png" title="Mi Perfil" alt="Mi perfil" width="25px"></a></div>
-    </section>
-    </nav>
 
-    <nav class="tabs">
-        <input class="tabs__controller" checked type="radio" id="tab-siguiendo" name="tabs">
-        <input class="tabs__controller" type="radio" id="tab-general" name="tabs">
-      <ul class="tabs__row">
-        <li class="tabs__item">
-            <label class="tabs__button siguiendo" for="tab-siguiendo">Siguiendo</label>
+<body>
+
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+            <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
+        <ul class="nav nav-pills nav-flush flex-column mt-auto text-center border-0 py-4">
+            <li class="nav-item">
+                <a href="#" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Inicio">
+                    <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="trending.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Trending">
+                    <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="explora.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Explora">
+                    <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="iniciar-sesion.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Perfil">
+                    <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="fixed-bottom w-100 bg-white d-xl-none d-block nav-pills nav-flush m-0 text-center border-0 py-3 px-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link py-1 w-25 float-left">
+                <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;" data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio"></i>
+            </a>
         </li>
-         <li class="tabs__item">
-            <label class="tabs__button general" for="tab-general">General</label>
+        <li>
+            <a href="trending.html" class="nav-link py-1 pl-0 pr-5 w-25 float-left">
+                <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Trending"></i>
+            </a>
         </li>
-      </ul>
-      </nav>
-    <section class="cuerpo">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card photo-block">
+        <li>
+            <a href="explora.html" class="nav-link py-1 pr-0 pl-5 w-25 float-left">
+                <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Explora"></i>
+            </a>
+        </li>
+        <li>
+            <a href="iniciar-sesion.html" class="nav-link py-1  w-25 float-left">
+                <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Perfil"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="container">
+        <!-- Nav pills -->
+        
+        <div class="container sticky-top bg-light">
+            <div class="d-xl-none d-block mt-n2 mb-n5">
+                <h1 class="pt-4 m-3 text-center" style="color: #111;">GALE</h1>
+            </div>
+            <ul class="nav nav-pills mx-auto pt-5" role="tablist" style="width: fit-content;">
+                <li class="nav-item">
+                    <a class="nav-link active px-4 py-3 text-uppercase" data-toggle="pill"
+                        href="#siguiendo">Siguiendo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4 py-3 text-uppercase" data-toggle="pill" href="#general">General</a>
+                </li>
+            </ul>
+        </div>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="siguiendo" class="container tab-pane active"><br>
+                <div class="container">
+                    <div class="card-columns pb-5 h-fit">
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p14.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 3 mins</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/02.jpg">
+                            </div>
+                            <div class="photo-metadata-block text-left">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <div class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" />
+                                            <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" />
+                                            <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" />
+                                            <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" />
+                                            <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" />
+                                            <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+                                          </div> 4
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 2</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más densa.</p>
+                                    </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>Naturaleza</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>FOTOGRAFÍA</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p05.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 6 h</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/09.jpg">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> 5</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 0</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>decoración</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>nórdico</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p15.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 1 d</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/01.jfif">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                                                class="bi bi-star"></i> 3</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 3</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>analógica</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>vintage</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p10.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 1 d</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/03.jpg">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                                                class="bi bi-star"></i> 3</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 3</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>belleza</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>fruta</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id="general" class="container tab-pane fade"><br>
+            <div class="container">
+                <div class="card-columns pb-5 h-fit">
+                    <a href="detalle.html">
+                    <div class="card border-0 pb-2 mb-4 bg-white shadow">
                         <div class="photo-header-block">
-                            <img src="https://images.unsplash.com/profile-1607679804233-01795d81bb1cimage" alt=""
-                                class="profile-ph-post">
-                            <p class="user">enrique</p>
+                            <div class="row">
+                                <div class="col-7 text-left">
+                                    <img src="images/p11.jfif"
+                                        alt="" class="profile-ph-post">
+                                    <p class="user">user</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="time">Hace 2 mins</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="photo-image-block">
                             <img class="photo-image"
-                                src="https://images.unsplash.com/photo-1590848002018-654b45704124?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                                src="images/29.jfif">
                         </div>
-                        <div class="photo-metadata-block">
-                            <h3 class="photo-score">4.52</h3>
+                        <div class="photo-metadata-block text-left">
+                            <div class="row">
+                                <div class="col-9 text-left">
+                                    <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                            class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                            class="bi bi-star"></i> 4</p>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <p><i class="bi bi-chat"></i> 2</p>
+                                </div>
+                            </div>
+                            <div class="row mx-1">
                             <p class="photo-title">Ejemplo de título</p>
                             <p class="photo-description">Ejemplo de descripción más extensa.</p>
                         </div>
-                        <div class="photo-edit-block">
-                            <button>Edit this photo</button>
-                            <button>Delete this photo</button>
+                            <div class="row mx-1">
+                                <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>naturaleza</strong></p></div>
+                                <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>viaje</strong></p></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card photo-block">
+                    </div></a>
+                    <div class="card border-0  mb-4 bg-white shadow">
                         <div class="photo-header-block">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=150&h=150" alt=""
-                                class="profile-ph-post">
-                            <p class="user">sara</p>
+                            <div class="row">
+                                <div class="col-7 text-left">
+                                    <img src="images/p12.jfif"
+                                        alt="" class="profile-ph-post">
+                                    <p class="user">user</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="time">Hace 20 mins</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="photo-image-block">
                             <img class="photo-image"
-                                src="https://images.unsplash.com/photo-1616362150830-4c25d2df72d0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+                                src="images/33.jfif">
                         </div>
                         <div class="photo-metadata-block">
-                            <h3 class="photo-score">4.52</h3>
+                            <div class="row">
+                                <div class="col-9 text-left">
+                                    <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                            class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                            class="bi bi-star-fill"></i> 5</p>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <p><i class="bi bi-chat"></i> 0</p>
+                                </div>
+                            </div>
+                            <div class="row mx-1">
                             <p class="photo-title">Ejemplo de título</p>
                             <p class="photo-description">Ejemplo de descripción.</p>
-                        </div>
-                        <div class="photo-edit-block">
-                            <button>Edit this photo</button>
-                            <button>Delete this photo</button>
+                            </div>
+                            <div class="row mx-1">
+                                <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>Minimalismo</strong></p></div>
+                                <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>estilo de vida</strong></p></div>
+                            </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="col-md-4">
-                    <div class="card photo-block">
+
+                    <div class="card border-0  mb-4 bg-white shadow">
                         <div class="photo-header-block">
-                            <img src="https://images.unsplash.com/profile-1608896771419-7d1da7ac6abcimage?dpr=1&auto=format&fit=crop&w=150&h=150&q=60&crop=faces&bg=fff" alt=""
-                                class="profile-ph-post">
-                            <p class="user">jorge</p>
+                            <div class="row">
+                                <div class="col-7 text-left">
+                                    <img src="images/p13.jfif"
+                                        alt="" class="profile-ph-post">
+                                    <p class="user">user</p>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <p class="time">Hace 2 h</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="photo-image-block">
                             <img class="photo-image"
-                                src="https://images.unsplash.com/photo-1526146412436-03cc9db072d1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80">
+                                src="images/32.jfif">
                         </div>
                         <div class="photo-metadata-block">
-                            <h3 class="photo-score">4.52</h3>
-                            <p class="photo-title">Ejemplo de título</p>
-                            <p class="photo-description">Ejemplo de descripción.</p>
-                        </div>
-                        <div class="photo-edit-block">
-                            <button>Edit this photo</button>
-                            <button>Delete this photo</button>
+                            <div class="row">
+                                <div class="col-9 text-left">
+                                    <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                            class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                                            class="bi bi-star"></i> 3</p>
+                                </div>
+                                <div class="col-3 text-right">
+                                    <p><i class="bi bi-chat"></i> 3</p>
+                                </div>
+                            </div>
+                            <div class="row mx-1">
+                                <p class="photo-title">Ejemplo de título</p>
+                                <p class="photo-description">Ejemplo de descripción.</p>
+                                </div>
+                                <div class="row mx-1">
+                                    <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>griego</strong></p></div>
+                                    <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>grecia</strong></p></div>
+                                </div>
                         </div>
                     </div>
+                
                 </div>
             </div>
+        </div>
+    </div>
+
+
+</div>
+
+    <section class="github d-none d-lg-block">
+        <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
+            <i class="bi bi-github"></i>
+        </a>
     </section>
+
+
     <section class="nueva-foto-btn">
         <a href="nuevo.html">
-            <div class="circulo-mas">
-            <img src="images/mas.png" title="añadir foto" alt="nueva foto" width="60%" style="margin: 20%;">
+            <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Nueva foto">
+                <img src="images/mas.png" alt="nueva foto" width="60%" style="margin: 20%;">
             </div>
         </a>
     </section>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
 </body>
+
 </html>

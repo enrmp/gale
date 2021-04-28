@@ -1,0 +1,112 @@
+<!DOCTYPE html >
+<html>
+<head>
+    <title>Iniciar sesión &#8212; GALE</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+</head>
+<body>
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+        <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
+    <ul class="nav nav-pills nav-flush flex-column mt-auto text-center border-0 py-4">
+        <li class="nav-item">
+            <a href="index.html" class="nav-link py-5" title="Inicio" data-bs-toggle="tooltip" data-placement="right"
+                data-bs-original-title="Inicio">
+                <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;  opacity: .4;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="trending.html" class="nav-link py-5" title="Trending" data-bs-toggle="tooltip" data-placement="right"
+                data-bs-original-title="Trending">
+                <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="explora.html" class="nav-link py-5" title="Explora" data-bs-toggle="tooltip" data-placement="right"
+                data-bs-original-title="Explora">
+                <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link py-5" title="Perfil" data-bs-toggle="tooltip" data-placement="right"
+                data-bs-original-title="Perfil">
+                <i class="bi bi-person text-dark" style="font-size: 22px; color: #111;"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<ul class="fixed-bottom w-100 bg-white d-xl-none d-block nav-pills nav-flush m-0 text-center border-0 py-3 px-0">
+    <li class="nav-item">
+        <a href="index.html" class="nav-link py-1 w-25 float-left">
+            <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;  opacity: .4;" title="Inicio" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-original-title="Inicio"></i>
+        </a>
+    </li>
+    <li>
+        <a href="trending.html" class="nav-link py-1 pl-0 pr-5 w-25 float-left">
+            <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;" title="Trending" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-original-title="Trending"></i>
+        </a>
+    </li>
+    <li>
+        <a href="explora.html" class="nav-link py-1 pr-0 pl-5 w-25 float-left">
+            <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;" title="Explora" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-original-title="Explora"></i>
+        </a>
+    </li>
+    <li>
+        <a href="#" class="nav-link py-1  w-25 float-left">
+            <i class="bi bi-person text-dark" style="font-size: 22px; color: #111;" title="Perfil" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-original-title="Perfil"></i>
+        </a>
+    </li>
+</ul>
+
+<div class="container text-left my-5">
+    <div class="row">
+        <div class="col-11 col-md-8 mt-4 mx-auto">
+            <h1 class="mt-5">Iniciar sesión</h1>
+            <form action="">
+            <label for="usuario" class="form-label pt-4"><strong>Usuario</strong></label>
+            <input type="text" class="form-control rounded-pill border-dark px-4" placeholder="Escribe aquí tu nombre de usuario" id="usuario">
+
+            <label for="contraseña" class="form-label pt-4"><strong>Contraseña</strong></label>
+            <input type="password" class="form-control rounded-pill border-dark px-4" placeholder="Escribe aquí tu contraseña" id="usuario">
+            <button type="submit" class="btn btn-dark rounded-pill mt-5 w-100 p-2 bg-black text-uppercase"><strong>Iniciar sesión</strong></button>
+            </form>
+            <p class="mt-5 text-center">Si no tienes cuenta, puedes <strong><a href="registrar.html">registrate</a></strong></p>
+        </div>
+    </div>
+</div>
+
+<section class="github d-none d-lg-block">
+    <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
+        <i class="bi bi-github"></i>
+    </a>
+</section>
+
+<section class="nueva-foto-btn">
+    <a href="nuevo.html">
+        <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Nueva foto">
+            <img src="images/mas.png" alt="nueva foto" width="60%" style="margin: 20%;">
+        </div>
+    </a>
+</section>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+</body>
+</html>

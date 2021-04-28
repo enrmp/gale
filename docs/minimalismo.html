@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GALE &#8212; Galeria de fotos</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+            <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
+        <ul class="nav nav-pills nav-flush flex-column mt-auto text-center border-0 py-4">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Inicio">
+                    <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;opacity: .4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="trending.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Trending">
+                    <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="explora.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Explora">
+                    <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; "></i>
+                </a>
+            </li>
+            <li>
+                <a href="iniciar-sesion.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Perfil">
+                    <i class="bi bi-person text-dark" style="font-size: 22px; color: #111;opacity: .4; "></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="fixed-bottom w-100 bg-white d-xl-none d-block nav-pills nav-flush m-0 text-center border-0 py-3 px-0">
+        <li class="nav-item">
+            <a href="index.html" class="nav-link py-1 w-25 float-left">
+                <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio"></i>
+            </a>
+        </li>
+        <li>
+            <a href="trending.html" class="nav-link py-1 pl-0 pr-5 w-25 float-left">
+                <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Trending"></i>
+            </a>
+        </li>
+        <li>
+            <a href="explora.html" class="nav-link py-1 pr-0 pl-5 w-25 float-left">
+                <i class="bi bi-search text-dark" style="font-size: 18px; color: #111;" data-bs-toggle="tooltip" data-bs-placement="right" title="Explora"></i>
+            </a>
+        </li>
+        <li>
+            <a href="iniciar-sesion.html" class="nav-link py-1  w-25 float-left">
+                <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Perfil"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="container">
+                <div class="container mt-5">
+                    <h3 class="text-center my-5">Minimalista</h3>
+                    <div class="card-columns pb-5">
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p14.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 3 mins</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/17.jfif">
+                            </div>
+                            <div class="photo-metadata-block text-left">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <div class="rating">
+                                            <input type="radio" id="star5" name="rating" value="5" />
+                                            <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" />
+                                            <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" />
+                                            <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" />
+                                            <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" />
+                                            <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+                                          </div> 4
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 2</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más densa.</p>
+                                    </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>Naturaleza</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p05.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 6 h</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/18.jfif">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> 5</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 0</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>decoración</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>nórdico</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p15.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 1 d</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/20.jfif">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                                                class="bi bi-star"></i> 3</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 3</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>vintage</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p09.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 1 d</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/21.jfif">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                                                class="bi bi-star"></i> 3</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 3</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>fotografía</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card border-0  mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p10.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 1 d</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/07.jpg">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star"></i> <i
+                                                class="bi bi-star"></i> 3</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 3</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>fotografía</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="card border-0 mb-4 bg-white shadow">
+                            <div class="photo-header-block">
+                                <div class="row">
+                                    <div class="col-7 text-left">
+                                        <img src="images/p08.jfif"
+                                            alt="" class="profile-ph-post">
+                                        <p class="user">user</p>
+                                    </div>
+                                    <div class="col-5 text-right">
+                                        <p class="time">Hace 6 h</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="photo-image-block">
+                                <img class="photo-image"
+                                    src="images/31.jfif">
+                            </div>
+                            <div class="photo-metadata-block">
+                                <div class="row">
+                                    <div class="col-9 text-left">
+                                        <p><i class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> <i class="bi bi-star-fill"></i> <i
+                                                class="bi bi-star-fill"></i> 5</p>
+                                    </div>
+                                    <div class="col-3 text-right">
+                                        <p><i class="bi bi-chat"></i> 0</p>
+                                    </div>
+                                </div>
+                                <div class="row mx-1">
+                                    <p class="photo-title">Ejemplo de título</p>
+                                    <p class="photo-description">Ejemplo de descripción más extensa.</p>
+                                </div>
+                                    <div class="row mx-1">
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>decoración</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>minimalista</strong></p></div>
+                                        <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>nórdico</strong></p></div>
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+</div>
+
+    <section class="github d-none d-lg-block">
+        <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
+            <i class="bi bi-github"></i>
+        </a>
+    </section>
+
+
+    <section class="nueva-foto-btn">
+        <a href="nuevo.html">
+            <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Nueva foto">
+                <img src="images/mas.png" alt="nueva foto" width="60%" style="margin: 20%;">
+            </div>
+        </a>
+    </section>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+</body>
+
+</html>
