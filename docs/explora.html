@@ -14,7 +14,14 @@
     <script src="js/libs/jquery-3.4.1.min.js"></script>
     <script src="js/libs/owl.carousel.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
+    <script src= "js/libs/axios.min.js "> </script>
+    <script src="js/explora.js" type="module"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <!-- UIkit CSS -->
+<link rel="stylesheet" href="css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="js/libs/uikit.min.js"></script>
 
 </head>
 <body>
@@ -67,7 +74,7 @@
     </li>
 </ul>
 
-<div class="container my-5">
+<div class="container py-5">
     <div class="row">
         <div class="col-10 mx-auto">
             <h1 class="text-center mb-5">Explora</h1>
@@ -78,17 +85,16 @@
               </div>
 
               <div class="row my-4" data-bs-toggle="tooltip" data-placement="bottom" title="Desliza">
-                <div class="owl-carousel">
-                <div class="p-2 px-3 text-center bg-line mx-auto rounded-pill" data-toggle="modal" data-target="#exampleModal"><p class="m-0 fs-3 cat"><strong><i class="bi bi-plus"></i> añadir categoria</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>AMOR</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>FOTOGRAFÍA</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>COCINA</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>ANIMALES</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>ESTILO DE VIDA</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>grecia</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>analógico</strong></p></div>
-                <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill"><p class="m-0 fs-3 cat"><strong>vintage</strong></p></div>
-                </div>
+                <div uk-slider="finite: true">
+                    <ul id="slider-cat" class="uk-slider-items" style="height: 40px;">
+                        <li>
+                <div class="p-2 px-3 mx-1 text-center bg-line rounded-pill" id="add-cat" data-toggle="modal" data-target="#exampleModal"><p class="m-0 fs-3 cat"><strong><i class="bi bi-plus"></i> añadir categoria</strong></p></div>
+            </li>
+        </ul>
+
+</div>
+
+                <div id="errors"> </div>
             </div>
 
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -97,13 +103,16 @@
                     <div class="modal-header border-0">
                       <h4 class="modal-title" id="exampleModalLabel">Añade una nueva categoría</h4>
                     </div>
+                    <form id="form-categoria">
                     <div class="modal-body">
-                        <input type="text" class="form-control rounded-pill border-dark px-4" id="categoria" placeholder="Escribe aquí tu categoría">
+                        <input type="text" class="form-control rounded-pill border-dark px-4" name="nombre" placeholder="Escribe aquí tu categoría">
                     </div>
                     <div class="modal-footer border-0">
                       <button type="button" class="btn rounded-pill bg-line" data-dismiss="modal"><strong>Cerrar</strong></button>
-                      <button type="button" class="btn rounded-pill btn-dark"><strong>Añadir categoría</strong></button>
+                      <button type="submit" class="btn rounded-pill btn-dark"><strong>Añadir categoría</strong></button>
                     </div>
+                </form>
+                <div id="errors"></div>
                   </div>
                 </div>
               </div>

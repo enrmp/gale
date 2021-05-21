@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Administración &#8212; GALE</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src= "js/libs/axios.min.js "> </script>
+    <script src="js/inapropiadas.js" type="module"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+</head>
+
+<body>
+
+    <div class="d-xl-flex flex-column bg-white h-100 m-0 d-none fixed-top" style="width: 10%;">
+            <h1 class="py-4 m-3 text-center" style="color: #111;">GALE</h1>
+        <ul class="nav nav-pills nav-flush flex-column mt-auto text-center border-0 py-4">
+            <li class="nav-item">
+                <a href="#" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Inicio">
+                    <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="trending.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Trending">
+                    <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="explora.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Explora">
+                    <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;"></i>
+                </a>
+            </li>
+            <li>
+                <a href="iniciar-sesion.html" class="nav-link py-5" data-bs-toggle="tooltip" data-placement="right" title="Perfil">
+                    <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <ul class="fixed-bottom w-100 bg-white d-xl-none d-block nav-pills nav-flush m-0 text-center border-0 py-3 px-0">
+        <li class="nav-item">
+            <a href="#" class="nav-link py-1 w-25 float-left">
+                <i class="bi bi-grid text-dark" style="font-size: 20px; color: #111;" data-bs-toggle="tooltip" data-bs-placement="right" title="Inicio"></i>
+            </a>
+        </li>
+        <li>
+            <a href="trending.html" class="nav-link py-1 pl-0 pr-5 w-25 float-left">
+                <i class="bi bi-star text-dark" style="font-size: 20px; color: #111; opacity: 0.4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Trending"></i>
+            </a>
+        </li>
+        <li>
+            <a href="explora.html" class="nav-link py-1 pr-0 pl-5 w-25 float-left">
+                <i class="bi bi-search text-dark" style="font-size: 18px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Explora"></i>
+            </a>
+        </li>
+        <li>
+            <a href="iniciar-sesion.html" class="nav-link py-1  w-25 float-left">
+                <i class="bi bi-person text-dark" style="font-size: 22px; color: #111; opacity: .4;" data-bs-toggle="tooltip" data-bs-placement="right" title="Perfil"></i>
+            </a>
+        </li>
+    </ul>
+
+    <div class="container my-5">
+        <!-- Nav pills -->
+        
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <h1 class="text-center mb-5">Administración</h1>
+                <h3 class="text-center mb-5">Palabras inapropiadas</h3>
+                <form id="form-inapropiadas">
+                <div class="row mx-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="bg-line rounded-pill px-3 mr-3 form-control" name="palabra" placeholder="Escribe una palabra inapropiada" aria-label="palabra inapropiada" aria-describedby="nueva-inapropiada">
+                        <button class="btn btn-dark rounded-pill px-4 bg-black text-uppercase" type="submit" id="nueva-inapropiada">añadir palabra</button>
+                    </div>
+                </div>
+                </form>
+                <div id="errors"> </div>
+                <div class="row mt-2 mx-3" id="inapropiadas">
+            </div>
+        </div>
+ </div>
+
+
+
+</div>
+
+    <section class="github d-none d-lg-block">
+        <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
+            <i class="bi bi-github"></i>
+        </a>
+    </section>
+
+
+    <section class="nueva-foto-btn">
+        <a href="nuevo.html">
+            <div class="circulo-mas" data-bs-toggle="tooltip" data-bs-placement="right" title="Nueva foto">
+                <img src="images/mas.png" alt="nueva foto" width="60%" style="margin: 20%;">
+            </div>
+        </a>
+    </section>
+
+<script>
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+</body>
+
+</html>

@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/libs/jquery-3.4.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
-    <script src="js/libs/jquery.adaptive-backgrounds.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <script src= "js/libs/axios.min.js "> </script>
+    <script src="js/detalle.js" type="module"></script>
+    <script src="js/libs/jquery.adaptive-backgrounds.js"></script>
     <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 
@@ -30,8 +32,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="card border-0 mb-5 p-3 bg-white">
+            <div class="col-12" id="contenido">
+                <div id="errors"> </div>
+                <!-- <div class="card border-0 mb-5 p-3 bg-white">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="photo-header-block">
@@ -114,26 +117,20 @@
                         </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 
 
 
-    <section class="back">
 
-    </section>
 
 <script>
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-
-jQuery(document).ready(function(){
-jQuery.adaptiveBackground.run()
-});
 </script>
 </body>
 
