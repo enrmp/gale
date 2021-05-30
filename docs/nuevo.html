@@ -12,6 +12,7 @@
     <script src="js/libs/popper.min.js"></script>
     <script src= "js/libs/axios.min.js"> </script>
     <script src="js/nuevo.js" type="module"></script>
+    <script src="js/logged.js" type="module"></script>
     <script src="js/libs/bootstrap.min.js"></script>
 </head>
 <body class="bg-white h-100">
@@ -34,13 +35,11 @@
                 <label for="input-description" class="form-label pt-4"><strong>Descripción</strong></label>
                 <input type="text" class="form-control rounded-pill border-dark px-4" name="description" id="input-description">
 
+
             </div>
             <div class="col-12 col-lg-6">
                 <label for="input-title" class="form-label pt-4"><strong>Título</strong></label>
                 <input required type="text" class="form-control rounded-pill border-dark px-4" name="title" id="input-title">
-
-                <label for="input-title" class="form-label pt-4"><strong>Categorías</strong></label>
-                <input type="text" class="form-control rounded-pill border-dark px-4" id="imgcat">
 
                 <p class="pt-4"><strong>Visibilidad</strong></p>
                 <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" value="Public" name="visibility" id="input-visibility">
@@ -51,9 +50,34 @@
                 <label class="form-check-label d-block m-0 pl-2 float-left" for="input-visibility">
                   Privada
                 </label>
+                <!-- <label for="input-cat" class="form-label pt-4"><strong>Categorías</strong></label>
+                <input type="text" class="form-control rounded-pill border-dark px-4" id="input-cat"> -->
+<!-- 
+                <label for="input-cat" class="form-label pt-4"><strong>Categorías</strong></label>
+                <div class="row">
+                <div class="col-6">
+                <select class="form-select form-control border-dark px-4" aria-label="Default select example" multiple>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="3">Three</option>
+                    <option value="3">Three</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label>
+                </div>
+                <div class="col-6">
+                <button type="submit" class="btn btn-dark rounded-pill w-100 p-2 bg-black text-uppercase"><strong>Añadir categoría</strong></button>
+                    </div>
+</div> -->
+
+
             </div>
             <div class="col-12 text-center mt-5">
-            <button type="submit" class="btn btn-dark rounded-pill w-50 mt-5 p-2 bg-black text-uppercase"><strong>Compartir imagen</strong></button>
+                <img id="img" class="photo-image w-10 mt-3 mx-auto" src="">
+            </div>
+            <div class="col-12 text-center mb-5">
+            <button type="submit" class="btn btn-dark rounded-pill w-50 mt-5 mb-5 p-2 bg-black text-uppercase"><strong>Siguiente</strong></button>
             </div>
         </div>
     </form>

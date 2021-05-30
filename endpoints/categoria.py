@@ -25,7 +25,7 @@ def get_by_id():
     method="POST",
     sql="INSERT INTO categoria (nombre) VALUES ($nombre)",
     description="Creates a new categoria",
-    auth_required=False,
+    auth_required=True,
 )
 def create(nombre, photoId):
     pass
@@ -37,7 +37,7 @@ def create(nombre, photoId):
     method="PUT",
     sql="UPDATE categoria SET nombre = $nombre WHERE categoriaId = $categoriaId",
     description="Updates an existing categoria",
-    auth_required=False,
+    auth_required=True,
 )
 def update(nombre):
     pass
@@ -49,7 +49,7 @@ def update(nombre):
     method="DELETE",
     sql="DELETE FROM Categoria WHERE categoriaId = $categoriaId",
     description="Removes a categoria",
-    auth_required=False,
+    auth_required=True,
 )
 def delete():
     pass

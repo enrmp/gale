@@ -1,45 +1,36 @@
 "use_strict";
 import { BASE_URL, requestOptions } from "./common.js";
-const photosAPI = {
+const photoscategoriaAPI = {
     getAll: function () {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/photos`, requestOptions)
+                .get(`${BASE_URL}/photoscategoria`, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-    getById: function (photoId) {
+    getById: function (phCategoriaId) {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/photos/${photoId} `, requestOptions)
-                .then(response => resolve(response.data))
-                .catch(error => reject(error.response.data.message));
-        });
-    },
-
-    getCountByUser: function (userId) {
-        return new Promise(function (resolve, reject) {
-            axios
-                .get(`${BASE_URL}/photos/count/user/${userId} `, requestOptions)
+                .get(`${BASE_URL}/photoscategoria/${phCategoriaId} `, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
 
-    getPrivatesByUser: function (userId) {
+    getByPhoto: function (photoId) {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/photos/userprivate/${userId} `, requestOptions)
+                .get(`${BASE_URL}/photoscategoria/photo/${photoId} `, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
 
-    getByUser: function (userId) {
+    getByCategoria: function (categoriaId) {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/photos/user/${userId} `, requestOptions)
+                .get(`${BASE_URL}/photoscategoria/categoria/${categoriaId} `, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
@@ -48,28 +39,28 @@ const photosAPI = {
     create: function(formData) {
         return new Promise(function(resolve, reject) {
             axios
-                .post(`${BASE_URL}/photos`, formData, requestOptions)
+                .post(`${BASE_URL}/photoscategoria`, formData, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-    update: function(photoId, formData) {
+    update: function(categoriaId, formData) {
         return new Promise(function(resolve, reject) {
             axios
-                .put(`${BASE_URL}/photos/${photoId}`, formData,
+                .put(`${BASE_URL}/photoscategoria/${categoriaId}`, formData,
                     requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-    delete: function(photoId) {
+    delete: function(categoriaId) {
         return new Promise(function(resolve, reject) {
             axios
-                .delete(`${BASE_URL}/photos/${photoId} `, requestOptions
+                .delete(`${BASE_URL}/photoscategoria/${categoriaId} `, requestOptions
                 )
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
 };
-export { photosAPI };
+export { photoscategoriaAPI };

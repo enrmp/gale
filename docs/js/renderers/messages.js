@@ -13,8 +13,9 @@ function getErrorsDiv() {
 const messageRenderer = {
 
     showMessageAsAlert: function (message, bootClass) {
-        let html = `<div class="alert alert-${bootClass} alert-dismissible col-md-12">
+        let html = `<div class="alert alert-${bootClass} fixed-bottom my-5 p-4 mx-auto alert-dismissible col-md-6 col-10">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <h1 class="outline-title">Ey!</h1>
                         ${message}
                     </div>`;
         let errorsDiv = getErrorsDiv();

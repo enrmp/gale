@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Detalles de imagen &#8212; GALE</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="js/libs/jquery-3.4.1.min.js"></script>
+    <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/jquery.adaptive-backgrounds.js"></script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src= "js/libs/axios.min.js"> </script>
+    <script src="js/editar-cats.js" type="module"></script>
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+</head>
+
+<body class="detalle">
+
+    <div class="d-block h-100 mt-3 w-fit">
+        <h5 class="text-center m-5 bg-white py-2 px-4 rounded-pill" style="color: #111;">
+            <a href="javascript: history.go(-1)">
+                <div data-bs-toggle="tooltip" data-placement="bottom" title="Volver">
+                    <i class="bi bi-arrow-left"></i>
+                </div>
+            </a>
+            </h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card border-0 mb-5 p-5 bg-white">
+                    <form id="form-photo-upload">
+                        <div class="row align-middle">
+          
+                          <div id="child" class="col-12">
+                              <!-- <label for="input-cat" class="form-label pt-4"><strong>Categorías</strong></label>
+                          <input type="text" class="form-control rounded-pill border-dark px-4" id="input-cat"> -->
+          
+                              <label for="input-cat" class=" px-3 form-label pt-4"><strong>Categorías</strong></label>
+          
+                          </div></div>
+                  </form>
+                  <div class="row align-middle">
+                  <div class="col-12 text-center">
+                  <div class="p-2 px-3 mx-auto text-center bg-line rounded-pill w-50" id="add-cat" data-toggle="modal"
+                  data-target="#exampleModal">
+                  <p class="m-0 fs-3 btn p-0 border-0 cat"><strong><i class="bi bi-plus"></i> añadir categoria</strong></p>
+              </div></div>
+          
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content p-5 border-0">
+                          <div class="modal-header border-0">
+                              <h4 class="modal-title" id="exampleModalLabel">Añade una nueva categoría</h4>
+                          </div>
+          
+                         <form action="" id="add-categoria">
+                              <div class="modal-body">
+                                  <input type="text" class="form-control rounded-pill border-dark px-4"
+                                      name="nombre" placeholder="Escribe aquí tu categoría">
+                              </div>
+                              <div class="modal-footer border-0">
+                                  <button type="button" class="btn rounded-pill bg-line"
+                                      data-dismiss="modal"><strong>Cerrar</strong></button>
+                                  <button type="submit" class="btn rounded-pill btn-dark"><strong>Añadir categoría</strong></button>
+                              </div>
+                          </form>
+                          <div id="errors"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                  <div id="errors"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <section class="back">
+
+    </section>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        jQuery(document).ready(function () {
+            jQuery.adaptiveBackground.run()
+        });
+    </script>
+</body>
+
+</html>

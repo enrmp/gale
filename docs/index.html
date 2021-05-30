@@ -14,6 +14,7 @@
     <script src="js/libs/bootstrap.min.js"></script>
     <script src= "js/libs/axios.min.js "> </script>
     <script src="js/index.js" type="module"></script>
+    <script src="js/logged.js" type="module"></script>
     <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 
@@ -77,17 +78,17 @@
             </div>
             <ul class="nav nav-pills mx-auto pt-5" role="tablist" style="width: fit-content;">
                 <li class="nav-item">
-                    <a class="nav-link active px-4 py-3 text-uppercase" data-toggle="pill"
+                    <a class="nav-link px-4 py-3 text-uppercase" data-toggle="pill"
                         href="#siguiendo">Siguiendo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-4 py-3 text-uppercase" data-toggle="pill" href="#general">General</a>
+                    <a class="nav-link active px-4 py-3 text-uppercase" data-toggle="pill" href="#general">General</a>
                 </li>
             </ul>
         </div>
         <!-- Tab panes -->
         <div class="tab-content">
-            <div id="siguiendo" class="container tab-pane active"><br>
+            <div id="siguiendo" class="container tab-pane fade"><br>
                 <div class="container">
                     <div id="errors"> </div>
                     <!--<div class="card-columns pb-5 h-fit">
@@ -261,7 +262,7 @@
                     </div>-->
                 </div>
         </div>
-        <div id="general" class="container tab-pane fade"><br>
+        <div id="general" class="container tab-pane active"><br>
             <div class="container">
                 <div class="card-columns pb-5 h-fit">
                     <a href="detalle.html">

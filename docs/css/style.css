@@ -34,13 +34,14 @@
 a {
     color: #111111 !important;
     text-decoration: none !important;
+    cursor: pointer !important;
 }
 
 ::placeholder,input {
     font-family: texto !important;
 }
 
-p,a,label,span,button,.btn {
+p,a,label,span,button,.btn,select {
     font-family: texto;
 }
 
@@ -63,6 +64,25 @@ h1,h2,h3,h4,h5,h6 {
 
 .w-fit {
     width: fit-content !important;
+}
+
+#img{
+    border-radius: 10px;
+}
+
+.w-10 {
+    width: 10% !important;
+}
+
+#git{
+    transform: rotate(
+        90deg
+        );
+    top: 10%;
+    position: absolute;
+    right: 10%;
+    float: right;
+    font-size: 15px;
 }
 
 .img-2{
@@ -116,9 +136,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .img-5{
-    width: 150px !important;
     float: left;
-    margin: 0 5px;
     height: 320px;
     border-radius: 20px !important;
     background-color: #ffffff;
@@ -129,10 +147,36 @@ h1,h2,h3,h4,h5,h6 {
     background-size: cover;
     color: #ffffff;
     font-size: 14px;
+    box-sizing: border-box;
+    border: 10px solid #f7f7f7;
+}
+
+
+.img-6{
+    float: left;
+    height: 120px;
+    width: 100%;
+    background-color: #ffffff;
+    background-position: center;
+    background-size: cover;
+}
+
+.alert-danger {
+    color: #111 !important;
+    background-color: #ffffff !important;
+    border-color: #111 !important;
+    border-radius: 30px !important;
+    font-family: "texto-b" !important;
+    z-index: 9999 !important;
 }
 
 .border-radius{
     border-radius: 10px;
+}
+
+#com {
+	height: 200px;
+	overflow-y: scroll;
 }
 
 .ver-mas{
@@ -200,8 +244,8 @@ a.nav-link{
     transition: background-size .5s;
 }
 
-.container{
-    animation: fade 1s ease;
+.container,section{
+    animation: fade 2s ease;
 }
 
 .card {
@@ -239,7 +283,7 @@ a.nav-link{
   }
   
   .rating > input:checked ~ label::before,
-  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover, .rating > input:hover ~ label::before,
   .rating:not(:checked) > label:hover ~ label::before {
     content: "\f586";
     color: #000000;
@@ -293,7 +337,6 @@ body > div.container.mt-5.align-middle.h-100 > div > div.col-12.text-center.mt-5
     }
 
     .img-5{
-        width: 150px !important;
         float: left;
         margin: auto !important;
         height: 200px;
@@ -306,6 +349,7 @@ body > div.container.mt-5.align-middle.h-100 > div > div.col-12.text-center.mt-5
         background-size: cover;
         color: #ffffff;
         font-size: 14px;
+        border: 0px;
     }
 
     .img-perfil{
@@ -456,6 +500,7 @@ input[type="radio"]:checked:after {
 body{
     background-color: #f7f7f7;
     margin: 0%;
+    margin-bottom: 100px !important;
 }
 
 .nueva-foto-btn {
@@ -475,7 +520,7 @@ body{
 
 .circulo-mas{
     background-color: #111111; border-radius: 50%; width: 55px; height: 55px; position: fixed; bottom: 50px; right: 70px;
-    z-index: 9999;
+    z-index: 9990;
 }
 
 .tabs {
@@ -591,10 +636,6 @@ body.nuevo {
     float: left;
 }
 
-div {
-    transition: opacity 0.4s;
-}
-
 img.cerrar{
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
@@ -642,6 +683,7 @@ input:focus {outline: none;}
 
     .menu {
         display: grid;
+        margin-top: 25px;
         width: 100%;
         padding: 5% 5%;
         grid-template-columns: 15% 35% 35% 15%;

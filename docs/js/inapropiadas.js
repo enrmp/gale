@@ -23,7 +23,6 @@ function handleSubmitInapropiadas(event) {
     event.preventDefault();
     let form = event.target;
     let formData = new FormData(form);
-    // Add the current user ID
     inapropiadasAPI.create(formData)
         .then(data => window.location.href = "inapropiadas.html")
         .catch(error => messageRenderer.showErrorMessage(error));

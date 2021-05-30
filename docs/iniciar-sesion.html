@@ -11,6 +11,8 @@
     <script src="js/libs/jquery-3.4.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <script src= "js/libs/axios.min.js "> </script>
+    <script src="js/iniciar-sesion.js" type="module"></script>
     <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 <body>
@@ -75,12 +77,13 @@
     <div class="row">
         <div class="col-11 col-md-8 mt-4 mx-auto">
             <h1 class="mt-5">Iniciar sesión</h1>
-            <form action="">
+            <div id="errors"></div>
+            <form id="login">
             <label for="usuario" class="form-label pt-4"><strong>Usuario</strong></label>
-            <input type="text" class="form-control rounded-pill border-dark px-4" placeholder="Escribe aquí tu nombre de usuario" id="usuario">
+            <input type="text" class="form-control rounded-pill border-dark px-4" name="username" placeholder="Escribe aquí tu nombre de usuario" id="usuario">
 
             <label for="contraseña" class="form-label pt-4"><strong>Contraseña</strong></label>
-            <input type="password" class="form-control rounded-pill border-dark px-4" placeholder="Escribe aquí tu contraseña" id="usuario">
+            <input type="password" class="form-control rounded-pill border-dark px-4" name="password" placeholder="Escribe aquí tu contraseña" id="usuario">
             <button type="submit" class="btn btn-dark rounded-pill mt-5 w-100 p-2 bg-black text-uppercase"><strong>Iniciar sesión</strong></button>
             </form>
             <p class="mt-5 text-center">Si no tienes cuenta, puedes <strong><a href="registrar.html">registrate</a></strong></p>

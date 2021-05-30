@@ -27,7 +27,7 @@ const sessionManager = {
             let diff = currentDate - tokenDate;
 
             if (diff > TOKEN_VALIDITY_TIME * 1000) {
-                console.error("The session has expired, logging out.");
+                alert("La sesión ha expirado, vuelve a iniciar sesión");
                 this.logout();
                 token = null;
             }

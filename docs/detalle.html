@@ -14,7 +14,7 @@
     <script src="js/libs/bootstrap.min.js"></script>
     <script src= "js/libs/axios.min.js "> </script>
     <script src="js/detalle.js" type="module"></script>
-    <script src="js/libs/jquery.adaptive-backgrounds.js"></script>
+    <script src="js/logged.js" type="module"></script>
     <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 
@@ -32,7 +32,36 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-12" id="contenido">
+            <div class="col-12">
+                <div id="contenido" class="card border-0 mb-5 p-3 bg-white">
+                    
+                    <form id="form-coment">
+                        <div class="row mt-4 mx-lg-5">
+                            <div class="col-1">
+                                <img src="images/p10.jfif"
+                                alt="" class="profile-ph-detail">
+                            </div>
+                            
+                            
+                        <div class="col pl-md-0 pl-sm-3 mt-3">
+                            <div class="input-group mb-3">
+                                <input type="text" name="texto" class="form-control rounded-pill border-0 bg-light px-4 mr-2 comentario" placeholder="Escribe un comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                  <button class="btn rounded-pill btn-dark comentario" type="submit">Enviar comentario</button>
+                                </div>
+
+                              </div></div>
+                        </div>
+                        </form>
+                    <div id="botones" class="row">
+                        <div class="col-md-6 my-5">
+                            <button type="button" href="#" id="editar-foto" class="btn rounded-pill w-100  text-uppercase"><strong>Editar foto</strong></button>
+                        </div>
+                        <div class="col-md-6 my-5">
+                            <button type="button" href="#" id="borrar-foto" class="btn rounded-pill w-100  text-uppercase"><strong>Eliminar foto</strong></button>
+                        </div>
+                    </div>
+                </div>
                 <div id="errors"> </div>
                 <!-- <div class="card border-0 mb-5 p-3 bg-white">
                     <div class="row">
@@ -120,6 +149,7 @@
                 </div> -->
             </div>
         </div>
+
     </div>
 
 

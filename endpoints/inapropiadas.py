@@ -25,7 +25,7 @@ def get_by_id():
     method="POST",
     sql="INSERT INTO Inapropiadas (palabra) VALUES ($palabra)",
     description="Creates a new inapropiadas",
-    auth_required=False,
+    auth_required=True,
 )
 def create(palabra, photoId):
     pass
@@ -37,7 +37,7 @@ def create(palabra, photoId):
     method="PUT",
     sql="UPDATE Inapropiadas SET palabra = $palabra WHERE inapropiadasId = $inapropiadasId",
     description="Updates an existing inapropiadas",
-    auth_required=False,
+    auth_required=True,
 )
 def update(palabra):
     pass
@@ -49,7 +49,7 @@ def update(palabra):
     method="DELETE",
     sql="DELETE FROM Inapropiadas WHERE inapropiadasId = $inapropiadasId",
     description="Removes a inapropiadas",
-    auth_required=False,
+    auth_required=True,
 )
 def delete():
     pass

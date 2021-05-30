@@ -13,18 +13,20 @@
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/jquery.adaptive-backgrounds.js"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <script src= "js/libs/axios.min.js"> </script>
+    <script src="js/editar.js" type="module"></script>
     <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 
 <body class="detalle">
 
     <div class="d-block h-100 mt-3 w-fit">
-            <h5 class="text-center m-5 bg-white py-2 px-4 rounded-pill" style="color: #111;">
-                <a href="javascript: history.go(-1)">
-                    <div data-bs-toggle="tooltip" data-placement="bottom" title="Volver">
-                        <i class="bi bi-arrow-left"></i>
-                    </div>
-                </a>
+        <h5 class="text-center m-5 bg-white py-2 px-4 rounded-pill" style="color: #111;">
+            <a href="javascript: history.go(-1)">
+                <div data-bs-toggle="tooltip" data-placement="bottom" title="Volver">
+                    <i class="bi bi-arrow-left"></i>
+                </div>
+            </a>
             </h1>
     </div>
 
@@ -32,44 +34,52 @@
         <div class="row">
             <div class="col-12">
                 <div class="card border-0 mb-5 p-5 bg-white">
+                    <form id="edit-form">
                     <div class="row">
                         <div class="col-12">
                             <h3>Editar foto</h3>
+                            <div id="errors"></div>
+                        </div>
+                        
+                        <div class="col-12 col-lg-6">
+                            <label for="input-url" class="form-label pt-4"><strong>URL</strong></label>
+                <input required type="url" class="form-control rounded-pill border-dark px-4" name="url" id="input-url">
+
+                <label for="input-description" class="form-label pt-4"><strong>Descripción</strong></label>
+                <input type="text" class="form-control rounded-pill border-dark px-4" name="description" id="input-description">
+
                         </div>
                         <div class="col-12 col-lg-6">
-                            <label for="imgurl" class="form-label pt-4"><strong>URL</strong></label>
-                            <input type="url" class="form-control rounded-pill border-dark px-4" id="imgurl">
-            
-                            <label for="description" class="form-label pt-4"><strong>Descripción</strong></label>
-                            <input type="text" class="form-control rounded-pill border-dark px-4" id="description">
-            
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <label for="title" class="form-label pt-4"><strong>Título</strong></label>
-                            <input type="text" class="form-control rounded-pill border-dark px-4" id="title">
-            
-                            <label for="imgcat" class="form-label pt-4"><strong>Categorías</strong></label>
-                            <input type="text" class="form-control rounded-pill border-dark px-4" id="imgcat">
-            
+                            <label for="input-title" class="form-label pt-4"><strong>Título</strong></label>
+                <input required type="text" class="form-control rounded-pill border-dark px-4" name="title" id="input-title">
+
+                            <!-- <label for="imgcat" class="form-label pt-4"><strong>Categorías</strong></label>
+                            <input type="text" class="form-control rounded-pill border-dark px-4" id="imgcat"> -->
+
                             <p class="pt-4"><strong>Visibilidad</strong></p>
-                            <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label d-block m-0 pl-2 mr-5 float-left" for="flexRadioDefault1">
-                              Pública
-                            </label>
-                            <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label d-block m-0 pl-2 float-left" for="flexRadioDefault2">
-                              Privada
-                            </label>
+                            <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" value="Public" name="visibility" id="input-visibility1">
+                <label class="form-check-label d-block m-0 pl-2 mr-5 float-left" for="input-visibility">
+                  Pública
+                </label>
+                <input class="form-check-input d-block m-0 mt-1 float-left" type="radio" value="Private" name="visibility" id="input-visibility2">
+                <label class="form-check-label d-block m-0 pl-2 float-left" for="input-visibility">Privada
+                </label>
                         </div>
                         <div class="col-12 text-center mt-5">
-                        <button type="button" class="btn btn-dark rounded-pill w-50 mt-5 p-2 bg-black text-uppercase"><strong>Compartir imagen</strong></button>
+                            <img id="img" class="photo-image w-10 mt-3 mx-auto" src="">
                         </div>
+                        <div class="col-12 text-center mx-auto">
 
+                        
+                        <button type="submit" id="edit-photo"
+                            class="btn btn-dark rounded-pill w-50 mt-3 mx-auto p-2 bg-black text-uppercase"><strong>Siguiente</strong></button>
                     </div>
-                    </div>
-                </div>
+                
+                </div></form>
             </div>
         </div>
+    </div>
+    </div>
     </div>
 
 
@@ -78,16 +88,16 @@
 
     </section>
 
-<script>
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-  return new bootstrap.Tooltip(tooltipTriggerEl)
-})
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
 
-jQuery(document).ready(function(){
-jQuery.adaptiveBackground.run()
-});
-</script>
+        jQuery(document).ready(function () {
+            jQuery.adaptiveBackground.run()
+        });
+    </script>
 </body>
 
 </html>

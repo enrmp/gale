@@ -16,10 +16,18 @@ CREATE TABLE Users (
 	firstName VARCHAR(128) NOT NULL,
 	lastName VARCHAR(128) NOT NULL,
 	telephone VARCHAR(32) NOT NULL,
-	email VARCHAR(128) NOT NULL,
+	email VARCHAR(128) UNIQUE NOT NULL,
 	username VARCHAR(64) UNIQUE NOT NULL,
 	password VARCHAR(256) NOT NULL,
 	avatarUrl VARCHAR(512)
+);
+
+CREATE TABLE Seguidores (
+	seguidoresId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	seguidorId INT NOT NULL,
+	seguidosId INT NOT NULL,
+	FOREIGN KEY (seguidorId) REFERENCES Users (userId),
+	FOREIGN KEY (seguidosId) REFERENCES Users (userId)
 );
 
 CREATE TABLE Photos (
@@ -43,8 +51,9 @@ CREATE TABLE photosCategoria (
 	photosCategoriaId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	photoId INT NOT NULL,
 	categoriaId INT NOT NULL,
-	FOREIGN KEY (photoId) REFERENCES Photos (photoId),
-	FOREIGN KEY (categoriaId) REFERENCES Categoria (categoriaId)
+	FOREIGN KEY (photoId) REFERENCES Photos (photoId) ON DELETE CASCADE,
+	FOREIGN KEY (categoriaId) REFERENCES Categoria (categoriaId),
+	CONSTRAINT PC UNIQUE (photoId,categoriaId)
 );
 
 CREATE TABLE Comentario (
@@ -62,8 +71,8 @@ CREATE TABLE Valoracion (
 	valor INT NOT NULL,
 	userId INT NOT NULL,
 	photoId INT NOT NULL,
-	UNIQUE (valor,photoId),
 	FOREIGN KEY (userId) REFERENCES Users (userId),
 	FOREIGN KEY (photoId) REFERENCES Photos (photoId),
-	CONSTRAINT ValorValido CHECK (valor>=0 AND valor<=5)
+	CONSTRAINT ValorUnico UNIQUE (userId,photoId),
+	CONSTRAINT ValorValido CHECK (valor>=1 AND valor<=5)
 );

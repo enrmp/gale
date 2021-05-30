@@ -8,20 +8,20 @@ import { authAPI } from "/docs/js/api/auth.js";
 
 function main() {
 
-    let registerForm = document.getElementById("register");
+    let loginForm = document.getElementById("login");
 
-    registerForm.onsubmit = handleSubmitRegister;
+    loginForm.onsubmit = handleSubmitLogin;
 
 }
 
-function handleSubmitRegister(event) {
+function handleSubmitLogin(event) {
     //alert("The form has been sent.")
 
     event.preventDefault();
     let form = event.target;
     let formData = new FormData(form);
 
-    let errors = userValidator.validateRegister(formData);
+    let errors = userValidator.validateLogin(formData);
 
 
     if (errors.length > 0) {
@@ -31,12 +31,12 @@ function handleSubmitRegister(event) {
             messageRenderer.showErrorMessage(error);
 
     }
-    else sendRegister(formData);
+    else sendLogin(formData);
 
 }
 
-function sendRegister(formData) {
-    authAPI.register(formData)
+function sendLogin(formData) {
+    authAPI.login(formData)
         .then(loginData => loginWithTokenAndUser(loginData))
         .catch(error => messageRenderer.showErrorMessage(error));
 }
