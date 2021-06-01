@@ -27,7 +27,8 @@ CREATE TABLE Seguidores (
 	seguidorId INT NOT NULL,
 	seguidosId INT NOT NULL,
 	FOREIGN KEY (seguidorId) REFERENCES Users (userId),
-	FOREIGN KEY (seguidosId) REFERENCES Users (userId)
+	FOREIGN KEY (seguidosId) REFERENCES Users (userId),
+	CONSTRAINT HasVueltoHaSeguir UNIQUE (seguidorId,seguidosId)
 );
 
 CREATE TABLE Photos (

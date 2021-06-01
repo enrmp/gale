@@ -1,6 +1,7 @@
 "use strict";
 import { parseHTML } from "/docs/js/utils/parseHTML.js";
 import { usersAPI } from "/js/api/users.js";
+import { photosAPI } from "/js/api/photos.js";
 import { comentarioAPI } from "/js/api/comentario.js";
 import { photoscategoriaAPI } from "/js/api/photoscategoria.js";
 import { sessionManager } from "/docs/js/utils/session.js";
@@ -32,7 +33,7 @@ const photoRenderer = {
         <div class="photo-metadata-block text-left">
             <div class="row">
                 <div class="col-9 text-left">
-                <i class="float-left bi bi-star"></i><p class="w-fit ml-2 float-left" id="nrat"> 5</p>
+                <i class="float-left bi bi-star"></i><p class="w-fit ml-2 float-left" id="nrat"> 0</p>
                 </div>
                 <div class="col-3 text-right">
                 <i class="bi bi-chat "></i><p class="w-fit ml-2 float-right" id="ncom"> 0</p>
@@ -53,6 +54,7 @@ const photoRenderer = {
         loadCatCard(newCard, photo.photoId);
         loadNCom(newCard, photo.photoId);
         loadTimeCard(newCard, photo.date);
+        loadMedia(newCard,photo.photoId);
         return newCard;
     },
 
@@ -65,8 +67,7 @@ const photoRenderer = {
                 <p class="m-0 user text-white"><strong></strong></p>
             </div>
             <div class="col-6 pr-0">
-                
-                <p class="text-white"><i class=" text-white bi bi-star"></i> 5</p>
+                <i class="text-white float-left bi bi-star"></i><p class="float-left ml-2 text-white" id="nrat"> 0</p>
             </div>
             <div class="col-6 text-right pl-0 pr-3 ">
             <i class="bi bi-chat text-white"></i><p class="text-white w-fit ml-2 float-right" id="ncom"> 0</p>
@@ -77,6 +78,7 @@ const photoRenderer = {
         let newCard = parseHTML(html);
         loadUsernameCard(newCard, photo.userId);
         loadNCom(newCard, photo.photoId);
+        loadMedia(newCard,photo.photoId);
         return newCard;
     },
 
@@ -176,6 +178,15 @@ const photoRenderer = {
     }
 
 };
+
+function loadMedia(card,photoId){
+    photosAPI.getMediaPhoto(photoId)
+    .then(photos => {
+        var v=photos[0].media;
+        card.querySelector("p#nrat").textContent=v;
+    })
+    .catch();
+}
 
 function loadUsernameCard(card, userId) {
     usersAPI.getById(userId)

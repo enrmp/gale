@@ -47,12 +47,12 @@ function main() {
 
         for (let i = 0; i < form.length; i++) {
             if (form[i].checked===false) {
-                photoscategoriaAPI.delete(form[i].value)
+                photoscategoriaAPI.delete(form[i].value,photoId)
                     .then(data => window.location.href = "index.html")
                     .catch(error => messageRenderer.showErrorMessage(error));
             }
 
-            else{
+            if (form[i].checked===true){
                 let formData = new FormData();
                 formData.append("categoriaId", form[i].value)
                 formData.append("photoId", photoId);

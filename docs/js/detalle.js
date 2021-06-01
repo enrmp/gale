@@ -2,6 +2,7 @@
 import { sessionManager } from "/docs/js/utils/session.js";
 import { photoRenderer } from "./renderers/photos.js";
 import { photosAPI } from "/docs/js/api/photos.js";
+import { inapropiadasAPI } from "/docs/js/api/inapropiadas.js";
 import { valoracionAPI } from "/docs/js/api/valoracion.js";
 import { comentarioAPI } from "/docs/js/api/comentario.js";
 import { messageRenderer } from "/docs/js/renderers/messages.js";
@@ -25,12 +26,33 @@ function main() {
             });
     }
 
+
+
     photosAPI.getById(photoId)
         .then(photos => {
             let photoDetails = photoRenderer.asDetails(photos[0]);
             photoContainer.insertBefore(photoDetails, botones);
-            let stars = photoContainer.querySelector("form#valor");
-            stars.onsubmit=handleSubmitRating;
+                        let stars = photoContainer.querySelector("form#valor");
+                        stars.onsubmit=handleSubmitRating;
+            valoracionAPI.getByPhoto(photoId)
+            .then(photos => {
+                for(let i=0;i<photos.length;i++){
+
+                    if(photos[i].userId===sessionManager.getLoggedId()){
+                        let form=photoContainer.querySelector("form#valor");
+                        form.style.display="none";
+                        photosAPI.getMediaPhoto(photoId)
+                        .then(photos => {
+                            var v=photos[0].media;
+                            let code=`<div><i class="float-left bi bi-star"></i><p class="w-fit ml-2 float-left" id="nrat"> ${v}</p><div>`;
+                            let html=parseHTML(code);
+                            form.parentNode.appendChild(html);
+                        })
+                        .catch();
+                    }
+                }
+            })
+            .catch();
         })
         .catch(error => messageRenderer.showErrorMessage(error));
 
@@ -49,6 +71,24 @@ function handleSubmitPhoto(event) {
     event.preventDefault();
     let form = event.target;
     let formData = new FormData(form);
+    let bol=false;
+    let texto=formData.get("texto");
+
+    if(formData.get("texto")===""){
+        messageRenderer.showErrorMessage("El comentario está vacio ☹");
+        bol=true;
+    }
+    inapropiadasAPI.getAll()
+    .then(data => {
+
+        for(let i=0; i<data.length;i++){
+            if(texto.toLowerCase().includes(data[i].palabra)){
+                messageRenderer.showErrorMessage("Lo que escribe es inapropiado ☹");
+                bol=true;
+            }
+        }
+
+    if(!bol){
     // Add the current user ID
     formData.append("userId", sessionManager.getLoggedId());
     formData.append("photoId", photoId);
@@ -57,6 +97,15 @@ function handleSubmitPhoto(event) {
             window.location.href = "javascript:location.reload()";
         })
         .catch(error => messageRenderer.showErrorMessage(error));
+    }
+
+    })
+    .catch(error => messageRenderer.showErrorMessage(error));
+
+
+
+
+
 }
 
 function handleSubmitRating(event) {
@@ -68,16 +117,14 @@ function handleSubmitRating(event) {
     valoracionAPI.create(formData)
         .then(data => {
             form.style.display="none";
-            let valorId=data.lastId;
-            valoracionAPI.getById(valorId)
-        .then(valoraciones => {
-            var v=valoraciones[0].valor;
-            let code=`<div><i class="float-left bi bi-star"></i><p class="w-fit ml-2 float-left" id="nrat"> ${v}</p><div>`;
-            let html=parseHTML(code);
-            form.parentNode.appendChild(html);
-
-        })
-        .catch(error => messageRenderer.showErrorMessage(error));
+            photosAPI.getMediaPhoto(photoId)
+            .then(photos => {
+                var v=photos[0].media;
+                let code=`<div><i class="float-left bi bi-star"></i><p class="w-fit ml-2 float-left" id="nrat"> ${v}</p><div>`;
+                let html=parseHTML(code);
+                form.parentNode.appendChild(html);
+            })
+            .catch();
         })
         .catch(error => messageRenderer.showErrorMessage(error));
 }

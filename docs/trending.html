@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap-icons.css">
     <script src="js/libs/jquery-3.4.1.min.js"></script>
-    <script src="js/libs/owl.carousel.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/logged.js" type="module"></script>
+    <script src= "js/libs/axios.min.js "> </script>
+    <script src="js/trending.js" type="module"></script>
     <script src="js/libs/bootstrap.min.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+<!-- UIkit JS -->
+<script src="js/libs/uikit.min.js"></script>
 </head>
 
 <body>
@@ -77,254 +80,46 @@
         </li>
     </ul>
 
-    <div class="container my-5">
+    <div class="container py-5">
         <div class="row">
             <div class="col-10 mx-auto">
                 <h1 class="text-center mb-5">Trending</h1>
 
                 <h3 class="mb-3">Categorías</h3>
-                <div class="row mb-5 text-center mx-auto">
-                    <div class="owl-carousel">
-                    <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill">
-                        <p class="m-0 fs-3 cat"><strong>AMOR</strong> (3,5 mil)</p>
-                    </div>
-                    <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill">
-                        <p class="m-0 fs-3 cat"><strong>FOTOGRAFÍA</strong> (3,2 mil)</p>
-                    </div>
-                    <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill">
-                        <p class="m-0 fs-3 cat"><strong>COCINA</strong> (2,5 mil)</p>
-                    </div>
-                    <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill">
-                        <p class="m-0 fs-3 cat"><strong>ANIMALES</strong> (2,2 mil)</p>
-                    </div>
-                    <div class="p-2 px-3 text-center bg-gray mx-auto rounded-pill">
-                        <p class="m-0 fs-3 cat"><strong>ESTILO DE VIDA</strong> (1,5 mil)</p>
-                    </div>
+                <div class="row pb-5">
+                <div uk-slider="finite: true" class="p-0">
+                    <ul id="slider-cat" class="uk-slider-items" style="height: 40px;">
+                    </ul>
                 </div>
-
+                <div id="errors"></div>
                 </div>
                 <h3 class="mb-3">Más puntuación</h3>
-                <div class="row mb-5 owl-carousel">
-                    <div class="col p-2 position-relative px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618450684024-55f2d7b7740a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 5</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618270352864-fa8550f33446?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=703&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 4,8</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1569261994979-419b58fe0508?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1789&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 4,2</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618274895748-18a83fd6e6a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=614&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 4,2</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618277779512-fbe781205465?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 4,1</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 4</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <div class="row pb-5">
+                    <div uk-slider="finite: true" class="p-0 w-100">
+                        <ul id="slider-pv" class="uk-slider-items">
+                        </ul>
+                    </div></div>
                 <h3 class="mb-3">Más comentarios</h3>
 
-                <div class="row mb-5 owl-carousel">
-                    <div class="col p-2 position-relative px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618593537435-4bfdb1ec5869?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 3</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 199</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618506814776-082deec6745c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 4</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 144</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618510120934-8e95e3ee8033?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 3,7</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 120</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1613681230409-6423a38c43e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1051&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 3,2</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 70</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col p-2 px-3 img-2"
-                        style="background-image: url(https://images.unsplash.com/photo-1618553577523-3a5cfb783386?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);">
-                        <div class="row position-absolute bottom-0 info-img2">
-                            <div class="col-12">
-                                <p class="m-0"><strong>@user</strong></p>
-                            </div>
-                            <div class="col-6">
-                                <p><strong><i class="bi bi-star-fill"></i> 2,9</strong></p>
-                            </div>
-                            <div class="col-6 text-right comment-img2">
-                                <p><strong><i class="bi bi-chat-fill"></i> 55</strong></p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <div class="row pb-5">
+                    <div uk-slider="finite: true" class="p-0 w-100">
+                        <ul id="slider-com" class="uk-slider-items">
+                        </ul>
+                    </div></div>
 
                 <h3 class="mb-3">Más seguidos</h3>
-                <div class="row mb-5 text-center owl-carousel">
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p02.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0 mb-0"><strong>@user1</strong></p>
-                        <p class="m-0">20 mil</p>
-                    </div>
 
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p03.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user2</strong></p>
-                        <p class="m-0">12 mil</p>
-                    </div>
+                <div class="row pb-5">
+                    <div uk-slider="finite: true" class="p-0 w-100">
+                        <ul id="slider-seg" class="uk-slider-items">
+                        </ul>
+                    </div></div>
 
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p09.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user3</strong></p>
-                        <p class="m-0">7 mil</p>
-                    </div>
-
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p05.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user4</strong></p>
-                        <p class="m-0">5 mil</p>
-                    </div>
-
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p06.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user5</strong></p>
-                        <p class="m-0">2 mil</p>
-                    </div>
-                </div>
                 <h3 class="mb-3">Mejor puntuados</h3>
-                <div class="row mb-5 text-center owl-carousel">
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p12.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0 mb-0"><strong>@user6</strong></p>
-                        <p class="m-0"><i class="bi bi-star-fill"></i> 5</p>
-                    </div>
-
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p13.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user7</strong></p>
-                        <p class="m-0"><i class="bi bi-star-fill"></i> 4,2</p>
-                    </div>
-
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p14.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user8</strong></p>
-                        <p class="m-0"><i class="bi bi-star-fill"></i> 3,8</p>
-                    </div>
-
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p15.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user9</strong></p>
-                        <p class="m-0"><i class="bi bi-star-fill"></i> 3,7</p>
-                    </div>
-
-                    <div class="col p-2 px-3 img-4">
-                        <img src="images/p11.jfif" class="rounded-circle col" alt="">
-                        <p class="mt-3 mb-0"><strong>@user10</strong></p>
-                        <p class="m-0"><i class="bi bi-star-fill"></i> 3,6</p>
-                    </div>
-                </div>
+                <div uk-slider="finite: true" class="p-0 w-100">
+                    <ul id="slider-uv" class="uk-slider-items">
+                    </ul>
+                </div></div>
             </div>
         </div>
     </div>
@@ -347,17 +142,6 @@
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
-    </script>
-
-<script>
-    $(document).ready(function(){
-      $(".owl-carousel").owlCarousel();
-    });
-    $('.owl-carousel').owlCarousel({
-        margin:15,
-        loop:false,
-        autoWidth:true
-    })
     </script>
 </body>
 

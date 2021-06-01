@@ -13,7 +13,7 @@ def get_all():
 @endpoint(
     route="/seguidores/seguido/$seguidoId",
     method="GET",
-    sql="SELECT * FROM seguidores WHERE seguidoId = $seguidoId"
+    sql="SELECT * FROM seguidores natural join users WHERE userId=seguidorId and seguidosId = $seguidoId"
 )
 def get_by_id():
     pass
@@ -23,7 +23,7 @@ def get_by_id():
 @endpoint(
     route="/seguidores/seguidor/$seguidorId",
     method="GET",
-    sql="SELECT * FROM seguidores WHERE seguidorId = $seguidorId"
+    sql="SELECT * FROM seguidores natural join users WHERE userId=seguidosId and seguidorId = $seguidorId"
 )
 def get_by_id():
     pass
@@ -33,19 +33,19 @@ def get_by_id():
 @endpoint(
     route="/seguidores",
     method="POST",
-    sql="INSERT INTO seguidores (seguidorId,seguidoId) VALUES ($seguidorId,$seguidoId)",
-    description="Creates a new seguido",
+    sql="INSERT INTO seguidores (seguidorId,seguidosId) VALUES ($seguidorId,$seguidosId)",
+    description="Creates a new seguidos",
     auth_required=True,
 )
-def create(seguidorId,seguidoId):
+def create(seguidorId,seguidosId):
     pass
 
 ###############################################################################
 
 @endpoint(
-    route="/seguidores/$seguidoId/$seguidorId",
+    route="/seguidores/$seguidosId/$seguidorId",
     method="DELETE",
-    sql="DELETE FROM seguidores WHERE seguidoId = $seguidoId AND seguidorId=$seguidorId",
+    sql="DELETE FROM seguidores WHERE seguidosId = $seguidosId AND seguidorId=$seguidorId",
     description="Removes a seguido",
     auth_required=True,
 )

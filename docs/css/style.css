@@ -29,7 +29,7 @@
   
 ::-moz-selection { color: white;  background: #111111; }
 ::selection      { color: white;  background: #111111; }
-:focus{ box-shadow: none !important;}
+:focus{ box-shadow: none !important; outline: none !important;}
 
 a {
     color: #111111 !important;
@@ -86,7 +86,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .img-2{
-    width: 170px !important;
+    width: 190px !important;
     float: left;
     height: 230px;
     border-radius: 20px !important;
@@ -101,7 +101,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .img-4{
-    width: 170px !important;
+    width: 190px !important;
     float: left;
 }
 
@@ -147,6 +147,11 @@ h1,h2,h3,h4,h5,h6 {
     background-size: cover;
     color: #ffffff;
     font-size: 14px;
+    box-sizing: border-box;
+    border: 10px solid #f7f7f7;
+}
+
+.trending-b{
     box-sizing: border-box;
     border: 10px solid #f7f7f7;
 }
@@ -500,7 +505,7 @@ input[type="radio"]:checked:after {
 body{
     background-color: #f7f7f7;
     margin: 0%;
-    margin-bottom: 100px !important;
+    padding-bottom: 100px !important;
 }
 
 .nueva-foto-btn {

@@ -11,9 +11,39 @@ def get_all():
 ###############################################################################
 
 @endpoint(
+    route="/photos/siguiendo/$userId",
+    method="GET",
+    sql="SELECT * FROM photos NATURAL JOIN seguidores WHERE seguidorId = $userId AND userId=seguidosId AND visibility='public' GROUP BY photoId ORDER BY date DESC"
+)
+def get_by_id():
+    pass
+
+###############################################################################
+
+@endpoint(
     route="/photos/$photoId",
     method="GET",
     sql="SELECT * FROM Photos WHERE photoId = $photoId"
+)
+def get_by_id():
+    pass
+
+###############################################################################
+
+@endpoint(
+    route="/photos/media/$photoId",
+    method="GET",
+    sql="SELECT P.*, V.*, round(AVG(V.valor),1) AS media FROM photos P JOIN valoracion V ON (P.photoId=V.photoId)  WHERE V.photoId = $photoId"
+)
+def get_by_id():
+    pass
+
+###############################################################################
+
+@endpoint(
+    route="/photos/media",
+    method="GET",
+    sql="SELECT round(avg(valor),1) AS media,P.*,U.* FROM valoracion V JOIN photos P ON (V.photoId = P.photoId) JOIN users U ON (P.userId=U.userId) GROUP BY V.photoId order BY media desc"
 )
 def get_by_id():
     pass

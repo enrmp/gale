@@ -14,7 +14,7 @@ const profileRenderer = {
 <h2 class="mb-4 nombre-perfil">${user.firstName} ${user.lastName}</h2>
         <p><i class="bi bi-envelope"></i> ${user.email}</p>
         <p><i class="bi bi-hand-index-thumb"></i> @${user.username}</p>
-        <p><i class="bi bi-star"></i> 4,6</p>
+        <p><i class="bi bi-star"></i> ${user.media}</p>
     </div>
 
     

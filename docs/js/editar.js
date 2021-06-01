@@ -2,6 +2,7 @@
 import { photosAPI } from "/docs/js/api/photos.js";
 import { messageRenderer } from "/docs/js/renderers/messages.js";
 import { inapropiadasAPI } from "/docs/js/api/inapropiadas.js";
+import { comentarioAPI } from "/docs/js/api/comentario.js";
 
 let urlParams = new URLSearchParams(window.location.search);
 let photoId = urlParams.get("photoId");
@@ -74,6 +75,16 @@ function handleSubmitPhoto(event) {
         // Updating an existing photo
         formData.append("userId", currentPhoto.userId);
         formData.append("date", currentPhoto.date);
+
+        comentarioAPI.getByPhoto(photoId)
+        .then(comentario => {
+            let ncom = comentario.length;
+            if(ncom>0 && formData.get("visibility")==="Private"){
+                bol=true;
+                messageRenderer.showErrorMessage("No puedes hacer privada una foto con comentarios ☹");
+            }
+        });
+
 
         inapropiadasAPI.getAll()
         .then(data => {

@@ -14,7 +14,7 @@
     <script src= "js/libs/axios.min.js "> </script>
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/circletype.min.js"></script>
-    <script src="js/perfil.js" type="module"></script>
+    <script src="js/seguidos.js" type="module"></script>
     <link rel="stylesheet" href="css/bootstrap-icons.css">
 </head>
 
@@ -85,101 +85,11 @@
             </div>
         </div>
 
-        <div class="container my-5">
-            <div id="info">
-
-            </div>
-
-
-            <div class="row mx-auto mt-5 text-center estadisticas">
-                <div class="col-4">
-                    <div class="num-pr">
-                        <p id="countimg"></p>
-                    </div>
-                    <div class="num-des-pr text-uppercase">
-                        <p><strong>imágenes</strong></p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="num-pr">
-                        <p id="followers"></p>
-                    </div>
-                    <div class="num-des-pr text-uppercase">
-                        <p><strong>seguidores</strong></p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="num-pr">
-                        <p id="following"></p>
-                    </div>
-                    <div class="num-des-pr text-uppercase">
-                        <p><strong>seguidos</strong></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mx-4">
-                <div class="col-md-12 mx-auto text-center mt-5">
-                    <button type="button" href="#" id="navbar-logout" class="btn rounded-pill w-50 bg-line text-uppercase"><strong>Cerrar sesión</strong></button>
-                    <button type="button" href="#" id="follow" class="btn rounded-pill text-white w-50 bg-black text-uppercase"><strong>Seguir</strong></button>
-                    <button type="button" href="#" id="unfollow" class="btn rounded-pill w-50 bg-line text-uppercase"><strong>Dejar de Seguir</strong></button>
-                </div>
-            </div>
-
-            <ul class="nav nav-pills mx-auto pt-5" role="tablist" id="perfil" style="width: fit-content;">
-                <li class="nav-item">
-                    <a class="nav-link active px-3 py-3 text-uppercase" data-toggle="pill" href="#publicas">Públicas (0)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 py-3 text-uppercase" data-toggle="pill" href="#privadas">Privadas (0)</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link px-3 py-3 text-uppercase" data-toggle="pill" href="#valorado">Valorado (0)</a>
-                </li>
-            </ul>
-
-
-            <div class="tab-content">
-                <div id="errors"></div>
-                <div id="publicas" class="container tab-pane active"><br>
-                
-                </div>
-                <div id="privadas" class="container tab-pane fade"><br>
-                </div>
-
-                <div id="valorado" class="container tab-pane fade"><br>
-                    
-                </div>
-            </div>
-
-            <div class="modal fade" id="edit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content p-5 border-0">
-                    <div class="position-absolute boton-cerrar-m border-0 text-right">
-                        <button type="button" class="btn" data-dismiss="modal"><i class="bi bi-x" style="font-size: 30px;"></i></button>
-                      </div>
-                    <div class="modal-body text-center">
-                        <a href="editar.html"><button type="button" class="btn rounded-pill btn-dark"><strong>Editar</strong></button></a>
-                        <button type="button" class="btn rounded-pill bg-line" data-dismiss="modal"><strong>Eliminar</strong></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
+        <div class="container my-5" id="content">
+            <h1 class="mb-5">Seguidos</h1>
     </div>
 
-    <!-- <section class="github d-none d-lg-block text-uppercase">
-        <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
-            <i class="bi bi-github"></i>
-            <p id="git">Ver proyecto en github</p>
-        </a>
-    </section> -->
 
-    <section class="d-none d-lg-block text-uppercase">
-        <a href="https://github.eii.us.es/enrmunper/Proyecto-curso-IISSI2">
-            <p id="git">Ver proyecto en githubㅤ ㅤ ㅤ </p>
-        </a>
-    </section>
 
     <section class="nueva-foto-btn">
         <a href="nuevo.html">

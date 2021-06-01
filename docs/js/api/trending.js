@@ -1,49 +1,45 @@
 "use_strict";
 import { BASE_URL, requestOptions } from "./common.js";
-const seguidoresAPI = {
-    getAll: function () {
+const trendingAPI = {
+    getCategorias: function () {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/seguidores`, requestOptions)
+                .get(`${BASE_URL}/trending/categorias`, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-    getSeguidores: function (seguidoId) {
+    getPhotosValor: function () {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/seguidores/seguido/${seguidoId} `, requestOptions)
+                .get(`${BASE_URL}/trending/photosValor`, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-
-    getSeguidos: function (seguidorId) {
+    getComentarios: function () {
         return new Promise(function (resolve, reject) {
             axios
-                .get(`${BASE_URL}/seguidores/seguidor/${seguidorId} `, requestOptions)
+                .get(`${BASE_URL}/trending/comentarios`, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-
-    create: function(formData) {
-        return new Promise(function(resolve, reject) {
+    getSeguidos: function () {
+        return new Promise(function (resolve, reject) {
             axios
-                .post(`${BASE_URL}/seguidores`, formData, requestOptions)
+                .get(`${BASE_URL}/trending/seguidos`, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
-
-    delete: function(seguidosId,seguidorId) {
-        return new Promise(function(resolve, reject) {
+    getUsersValor: function () {
+        return new Promise(function (resolve, reject) {
             axios
-                .delete(`${BASE_URL}/seguidores/${seguidosId}/${seguidorId} `, requestOptions
-                )
+                .get(`${BASE_URL}/trending/usersValor`, requestOptions)
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
         });
     },
 };
-export { seguidoresAPI };
+export { trendingAPI };

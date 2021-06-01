@@ -33,7 +33,7 @@ def get_by_photo():
 @endpoint(
     route="/photoscategoria/categoria/$catId",
     method="GET",
-    sql="SELECT P.* FROM Photos P NATURAL JOIN photosCategoria NATURAL JOIN Categoria WHERE categoriaId = $catId AND visibility='public'"
+    sql="SELECT P.* FROM Photos P NATURAL JOIN photosCategoria NATURAL JOIN Categoria WHERE categoriaId = $catId AND visibility='public' order by P.date DESC"
 )
 def get_by_photo():
     pass
@@ -65,9 +65,9 @@ def update(nombre):
 ###############################################################################
 
 @endpoint(
-    route="/photoscategoria/$categoriaId",
+    route="/photoscategoria/$categoriaId/$photoId",
     method="DELETE",
-    sql="DELETE FROM photosCategoria WHERE categoriaId = $categoriaId",
+    sql="DELETE FROM photosCategoria WHERE categoriaId = $categoriaId and photoId=$photoId",
     description="Removes a categoria",
     auth_required=True,
 )

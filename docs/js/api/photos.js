@@ -9,6 +9,34 @@ const photosAPI = {
                 .catch(error => reject(error.response.data.message));
         });
     },
+
+    getSiguiendo: function (userId) {
+        return new Promise(function (resolve, reject) {
+            axios
+                .get(`${BASE_URL}/photos/siguiendo/${userId} `, requestOptions)
+                .then(response => resolve(response.data))
+                .catch(error => reject(error.response.data.message));
+        });
+    },
+
+    getMediaPhoto: function (photoId) {
+        return new Promise(function (resolve, reject) {
+            axios
+                .get(`${BASE_URL}/photos/media/${photoId} `, requestOptions)
+                .then(response => resolve(response.data))
+                .catch(error => reject(error.response.data.message));
+        });
+    },
+
+    getMediaPhotos: function () {
+        return new Promise(function (resolve, reject) {
+            axios
+                .get(`${BASE_URL}/photos/media `, requestOptions)
+                .then(response => resolve(response.data))
+                .catch(error => reject(error.response.data.message));
+        });
+    },
+
     getById: function (photoId) {
         return new Promise(function (resolve, reject) {
             axios

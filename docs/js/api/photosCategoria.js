@@ -53,10 +53,10 @@ const photoscategoriaAPI = {
                 .catch(error => reject(error.response.data.message));
         });
     },
-    delete: function(categoriaId) {
+    delete: function(categoriaId,photoId) {
         return new Promise(function(resolve, reject) {
             axios
-                .delete(`${BASE_URL}/photoscategoria/${categoriaId} `, requestOptions
+                .delete(`${BASE_URL}/photoscategoria/${categoriaId}/${photoId} `, requestOptions
                 )
                 .then(response => resolve(response.data))
                 .catch(error => reject(error.response.data.message));
