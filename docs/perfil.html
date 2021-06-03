@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/libs/jquery-3.4.1.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
+    <script src="js/libs/chart.min.js"></script>
     <script src= "js/libs/axios.min.js "> </script>
     <script src="js/libs/bootstrap.min.js"></script>
     <script src="js/libs/circletype.min.js"></script>
@@ -136,6 +137,9 @@
                 <li class="nav-item">
                     <a class="nav-link px-3 py-3 text-uppercase" data-toggle="pill" href="#valorado">Valorado (0)</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 py-3 text-uppercase" data-toggle="pill" href="#graph">Estadísticas</a>
+                </li>
             </ul>
 
 
@@ -149,6 +153,10 @@
 
                 <div id="valorado" class="container tab-pane fade"><br>
                     
+                </div>
+
+                <div id="graph" class="container tab-pane fade"><br>
+                    <canvas id="speedChart" width="600" height="200"></canvas>
                 </div>
             </div>
 

@@ -41,6 +41,16 @@ def get_by_id():
 ###############################################################################
 
 @endpoint(
+    route="/valoracion/stats/user/$userId",
+    method="GET",
+    sql="SELECT V.valor, COUNT(V.valor) AS NumValoraciones FROM valoracion V JOIN photos P ON(V.photoId=P.photoId) WHERE P.userId=$userId GROUP BY V.valor"
+)
+def get_by_id():
+    pass
+
+###############################################################################
+
+@endpoint(
     route="/valoracion",
     method="POST",
     sql="INSERT INTO valoracion (valor, userId, photoId) VALUES ($valor, $userId, $photoId )",

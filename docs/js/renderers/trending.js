@@ -65,6 +65,9 @@ const trendingRenderer = {
         </a></li>           `;
             
             let newTitle = parseHTML(html);
+            if(photo.avatarUrl===""){
+                newTitle.querySelector(".rounded-circle").src="images/profile.jpg";
+            }
             return newTitle;},
 
             asPerfV: function (photo) {
@@ -79,6 +82,9 @@ const trendingRenderer = {
             </a></li>           `;
                 
                 let newTitle = parseHTML(html);
+                if(photo.avatarUrl===""){
+                    newTitle.querySelector(".rounded-circle").src="images/profile.jpg";
+                }
                 return newTitle;}
     }
 

@@ -121,6 +121,7 @@ h1,h2,h3,h4,h5,h6 {
     min-width: 135px !important;
 }
 
+
 #perfil > li > a{
     font-size: 12px;
 }
@@ -182,6 +183,15 @@ h1,h2,h3,h4,h5,h6 {
 #com {
 	height: 200px;
 	overflow-y: scroll;
+}
+
+#slider-cat > li{
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+#slider-cat > li:last-child{
+    padding-right: 10px;
 }
 
 .ver-mas{

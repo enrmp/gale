@@ -58,6 +58,21 @@ const photoRenderer = {
         return newCard;
     },
 
+    asExplora: function (photo) {
+        let html = `       
+        <li>      
+        <div class="col p-2 px-3 img-3 b-gray" style="background-image: url(${photo.url});">
+        <div class="row position-absolute bottom-0 info-img2">
+            <div class="col-12"><p class="m-0 user mb-2"><strong>@user</strong></p></div>
+        </div>
+    </div></li>
+    `;
+        let newCard = parseHTML(html);
+        loadUsernameCard(newCard, photo.userId);
+        loadMedia(newCard,photo.photoId);
+        return newCard;
+    },
+
     asProfileCard: function (photo) {
         let html = `    
         <a class="col-md-3 col-5 mb-3 p-2 px-3 img-5" style="background-image: url(${photo.url});" href="detalle.html?photoId=${photo.photoId}">
@@ -214,7 +229,9 @@ function loadCatCard(card, photoId) {
             let nombre = categorias[i].nombre;
             let id=categorias[i].categoriaId;
             let p = card.querySelector("#categorias");
-            var grid = parseHTML(`<a href="categoria.html?categoriaId=${id}"><div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post"><p class="m-0"><strong>${nombre}</strong></p></div></a>`);
+            var grid = parseHTML(`<a href="categoria.html?categoriaId=${id}">
+            <div class="p-2 mt-4 mb-0 px-3 text-center mr-1 bg-gray cat-post">
+            <p class="m-0"><strong>${nombre}</strong></p></div></a>`);
             p.appendChild(grid);}
         });
 }

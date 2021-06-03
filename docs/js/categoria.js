@@ -14,17 +14,18 @@ function main() {
     .then(name => {
         let nombre = categoriaRenderer.asDetails(name[0]);
         galleryContainer.appendChild(nombre);
-    })
-    .catch(error => messageRenderer.showErrorMessage(error));
-
-
-
-    photoscategoriaAPI.getByCategoria (catId)
+            photoscategoriaAPI.getByCategoria (catId)
     .then(photos => {
     let gallery = galleryRenderer.asCardGallery(photos);
     galleryContainer.appendChild(gallery);
     })
     .catch(error => messageRenderer.showErrorMessage("No hay fotos con esta categoría"));
+    })
+    .catch(error => messageRenderer.showErrorMessage(error));
+
+
+
+
 
 }
 

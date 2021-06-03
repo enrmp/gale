@@ -16,6 +16,62 @@ let seSiguen;
 function main() {
     new CircleType(document.getElementById("git")).radius(0).forceWidth(true).forceHeight(true);;
 
+
+    var speedCanvas = document.getElementById("speedChart");
+    
+    valoracionAPI.getStatsByUser(userId)
+    .then(count => {
+        let valor=[];
+        let num=[];
+        for(let i=0;i<count.length;i++){
+            valor.push(count[i].valor);
+            num.push(count[i].NumValoraciones);
+        }
+       console.log(valor);
+       console.log(num);
+       graph(valor,num);
+    })
+    .catch(error =>{
+
+   });
+function graph(valor,num){
+
+
+    var speedData = {
+      labels: valor,
+      datasets: [{
+        label: "Valoraciones recibidas agrupadas por valor",
+        data: num,
+      }]
+    };
+
+    var chartOptions = {
+    backgroundColor: "#111",
+    animations: {
+      radius: {
+        duration: 400,
+        easing: 'linear',
+        loop: (context) => context.active
+      }
+    },
+      legend: {
+        display: true,
+        position: 'top',
+        labels: {
+          boxWidth: 80,
+          fontColor: 'black'
+        }
+      }
+    };
+    
+    var lineChart = new Chart(speedCanvas, {
+      type: 'bar',
+      data: speedData,
+      options: chartOptions
+    });
+
+}
+
     let infoContainer = document.querySelector("#info");
     usersAPI.getById(userId)
         .then(users => {

@@ -33,7 +33,17 @@ def get_by_photo():
 @endpoint(
     route="/photoscategoria/categoria/$catId",
     method="GET",
-    sql="SELECT P.* FROM Photos P NATURAL JOIN photosCategoria NATURAL JOIN Categoria WHERE categoriaId = $catId AND visibility='public' order by P.date DESC"
+    sql="SELECT P.*,C.* FROM Photos P NATURAL JOIN photosCategoria NATURAL JOIN Categoria C WHERE categoriaId = $catId AND visibility='public' order by P.date DESC"
+)
+def get_by_photo():
+    pass
+
+###############################################################################
+
+@endpoint(
+    route="/photoscategoria/categoria/nombre/$cat",
+    method="GET",
+    sql="SELECT C.categoriaId FROM Categoria C WHERE C.nombre = $cat"
 )
 def get_by_photo():
     pass

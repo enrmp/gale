@@ -28,6 +28,7 @@ CREATE TABLE Seguidores (
 	seguidosId INT NOT NULL,
 	FOREIGN KEY (seguidorId) REFERENCES Users (userId),
 	FOREIGN KEY (seguidosId) REFERENCES Users (userId),
+	CONSTRAINT auto_Seguir CHECK (seguidorId!=seguidosId),
 	CONSTRAINT HasVueltoHaSeguir UNIQUE (seguidorId,seguidosId)
 );
 

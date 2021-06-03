@@ -14,7 +14,7 @@ const profileRenderer = {
 <h2 class="mb-4 nombre-perfil">${user.firstName} ${user.lastName}</h2>
         <p><i class="bi bi-envelope"></i> ${user.email}</p>
         <p><i class="bi bi-hand-index-thumb"></i> @${user.username}</p>
-        <p><i class="bi bi-star"></i> ${user.media}</p>
+        <i class="float-left bi bi-star"></i><p id="media" class="float-left ml-1 m-0"> ${user.media}</p>
     </div>
 
     
@@ -22,6 +22,9 @@ const profileRenderer = {
         let newCard = parseHTML(html);
         if(user.avatarUrl===""){
             newCard.querySelector(".img-perfil").src="images/profile.jpg";
+        }
+        if(user.media===null){
+            newCard.querySelector("#media").textContent=" 0";
         }
         return newCard;
     }
