@@ -13,9 +13,9 @@ FOR EACH ROW
 BEGIN
 DECLARE maxPhotos INT;
 SET maxPhotos = (SELECT COUNT(*) FROM photos NATURAL JOIN users WHERE userId = new.userId GROUP BY userId);
-IF(maxPhotos >= 50) THEN
+IF(maxPhotos >= 3) THEN
 SIGNAL SQLSTATE '45000' SET message_text =
-'Solo puede subir 50 fotos ☹';
+'Solo puede subir 3 fotos ☹';
 END IF;
 END //
 DELIMITER ;

@@ -12,6 +12,9 @@ const userValidator= {
         if(password.length === "")
             errors.push("Debe introducir una contraseña");
 
+        if(password.length <5)
+            errors.push("La contraseña debe tener al menos 5 carácteres");
+
         if(username.length <2)
             errors.push("El nombre de usuario debe tener al menos 2 carácteres");
 
