@@ -1,3 +1,1 @@
-pip install silence
-pip install --upgrade silence
-cd docs
+silence==1.0
