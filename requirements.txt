@@ -1,2 +1,2 @@
 silence
-python silence run
+silence run
