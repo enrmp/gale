@@ -1,2 +1,3 @@
 pip install silence
+pip install --upgrade silence
 cd docs
